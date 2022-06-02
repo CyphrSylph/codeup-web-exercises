@@ -49,7 +49,7 @@ let timeInSchedule = confirm("Do you have time in your schedule?")
 
 let roomInClass = confirm("Did the class have room for an additional student?")
 
-alert("it is" + (roomInClass && timeInSchedule);
+alert("it is" + (roomInClass && timeInSchedule));
 
 //
 let moreThanTwo= confirm("Do you have more than two items in your cart?")
