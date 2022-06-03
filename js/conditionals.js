@@ -119,20 +119,20 @@
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-function calculateTotal(luckyNumber,totalAmount) {
-    if (luckyNumber === 0) {
-        alert("Oh no!, It seems you're out of luck. We don't have a discount for you today.")
-    } else if (luckyNumber === 1) {
-        alert('Your lucky number is 1! A 10% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.10))))
-    } else if (luckyNumber === 2) {
-        alert('Your lucky number is 2! A 25% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.25))))
-    } else if (luckyNumber === 3) {
-        alert('Your lucky number is 3! A 35% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.35))))
-    } else if (luckyNumber === 4) {
-        alert('Your lucky number is 4! A 50% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.50))))
-    } else if (luckyNumber === 5) {
-        alert('HUZZAH!, Your lucky number is 5. Your entire cart will be FREE today!')
-}}
+// function calculateTotal(luckyNumber,totalAmount) {
+//     if (luckyNumber === 0) {
+//         alert("Oh no!, It seems you're out of luck. We don't have a discount for you today.")
+//     } else if (luckyNumber === 1) {
+//         alert('Your lucky number is 1! A 10% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.10))))
+//     } else if (luckyNumber === 2) {
+//         alert('Your lucky number is 2! A 25% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.25))))
+//     } else if (luckyNumber === 3) {
+//         alert('Your lucky number is 3! A 35% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.35))))
+//     } else if (luckyNumber === 4) {
+//         alert('Your lucky number is 4! A 50% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.50))))
+//     } else if (luckyNumber === 5) {
+//         alert('HUZZAH!, Your lucky number is 5. Your entire cart will be FREE today!')
+// }}
 //calculateTotal(4,50);
 
 /**
@@ -144,10 +144,9 @@ function calculateTotal(luckyNumber,totalAmount) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-let luckyNumber = Math.floor(Math.random() * 6);
-let totalAmount = prompt("It looks like you're ready for checkout! Let us know your cart total and we'll see if it's your lucky day for a discount:");
-
-calculateTotal(luckyNumber,totalAmount);
+// let luckyNumber = Math.floor(Math.random() * 6);
+// let totalAmount = prompt("It looks like you're ready for checkout! Let us know your cart total and we'll see if it's your lucky day for a discount:");
+// calculateTotal(luckyNumber,totalAmount);
 
 /**
  * TODO:
@@ -167,3 +166,36 @@ calculateTotal(luckyNumber,totalAmount);
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+//i. Set up confirm to ask user to input number
+//ii. If "Ok", prompt for number. If "No", do nothing.
+//iii. Set three alerts based on numerical user input
+//iv. Set an alert for when the user inputs something other than a number
+//v. Refactor code to use function byt adjusting prompt value
+
+
+function numGame () {
+
+    let confirmed = confirm('Would you like to play a numbers game?');
+
+    if (confirmed === true){ // User selected "Ok"
+        let userInput = parseFloat(prompt('Enter a number:'));
+        if(isNaN(userInput) === false) { // User gave number
+            if(userInput % 2 === 0) {
+                alert(userInput + ' is even.');
+            } else {
+                alert(userInput + ' is odd.');
+            }
+            alert(userInput + ' plus 100 is ' + (userInput + 100) + '.');
+            if(userInput >= 0) {
+                alert(userInput + ' is a positive number.' );
+            } else {
+                alert(userInput + ' is a negative number.');
+            }
+        } else {
+            alert('Sorry, That is not a valid number.');
+        }
+    } else {
+        alert('Okay, maybe next time.');
+    }}
+
+numGame();
