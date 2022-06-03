@@ -22,24 +22,72 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
+// function analyzeColor(colorName) {
+//     if (colorName === 'Red') {
+//         console.log('Red pigment was made from ochre in prehistoric art.');
+//     } else if (colorName === 'Orange') {
+//         console.log('Orange comes from a photosynthetic pigment called carotenes.');
+//     } else if (colorName === 'Yellow') {
+//         console.log('The Egyptians made Yellow with a mix of ochre and orpiment.');
+//     } else if (colorName === 'Green') {
+//         console.log('The Greeks introduced verdigris, the first artificial green pigment.');
+//     } else if (colorName === 'Blue') {
+//         console.log('The first blue pigment was a natural mineral called azurite.');
+//     } else if (colorName === 'Indigo') {
+//         console.log('Indigo pigment is created by extracting leaves of the plant Indigofera tinctoria.');
+//     } else if (colorName === 'Violet') {
+//         console.log('The first violet pigment was prepared with cobalt in 1859.');
+//     } else {
+//         console.log("Hmm, it seems I can't locate that color in the codex.");
+// }}
+// analyzeColor('Violet');
 
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
-let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-let randomColor = colors[Math.floor(Math.random() * colors.length)];
+//let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+//let randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
  * TODO:
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
+//analyzeColor(randomColor);
 
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
+function analyzeColor(colorName) {
+
+    switch(colorName) {
+        case "Red":
+            console.log('Red pigment was made from ochre in prehistoric art.');
+            break;
+        case "Orange":
+            console.log('Orange comes from a photosynthetic pigment called carotenes.');
+            break;
+        case "Yellow":
+            console.log('The Egyptians made Yellow with a mix of ochre and orpiment.');
+            break;
+        case "Green":
+            console.log('The Greeks introduced verdigris, the first artificial green pigment.');
+            break;
+        case "Blue":
+            console.log('The first blue pigment was a natural mineral called azurite.');
+            break;
+        case "Indigo":
+            console.log('Indigo pigment is created by extracting leaves of the plant Indigofera tinctoria.');
+            break;
+        case "Violet":
+            console.log('The first violet pigment was prepared with cobalt in 1859.');
+            break;
+        default:
+            console.log("Hmm, it seems I can't locate that color in the codex.");
+            break;
+    }}
 
 /**
  * TODO:
@@ -47,6 +95,8 @@ let randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+let colorName = prompt('Chose a color from the Visible Color Spectrum:')
+analyzeColor(colorName);
 
 /* ########################################################################## */
 
