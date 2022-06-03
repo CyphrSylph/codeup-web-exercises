@@ -19,8 +19,9 @@ function sayHello(name) {
  *
  * console.log 'helloMessage' to check your work
  */
-let HelloMessage = sayHello('Smols')
-console.log(HelloMessage);
+let helloMessage = sayHello('Smols')
+console.log(helloMessage);
+
 /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
@@ -29,9 +30,10 @@ console.log(HelloMessage);
  */
 let myName = "Smols"
 sayHello(myName)
+
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
-var random = Math.floor((Math.random() * 3) + 1);
+let random = Math.floor((Math.random() * 3) + 1);
 
 /**
  * TODO:
@@ -50,11 +52,11 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-function isTwo(sumNum) {
-    return sumNum === 2;
+function isTwo(num) {
+    return num === 2;
 }
-
 isTwo(random);
+console.log(isTwo(random));
 
 /**
  * TODO:
@@ -79,9 +81,10 @@ function calculateTip(bill, tip) {
  * then display the dollar amount they should tip
  */
 let bill = prompt('What is your bill total?')
-let tip = prompt('What percentage would you like to tip?')
-alert(calculateTip(bill, tip));
+let tip = prompt('What percentage would you like to tip for ' + bill + '?')
+alert('Your tip amount will be' + calculateTip(bill, tip));
 console.log(calculateTip(bill, tip))
+
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
