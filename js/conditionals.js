@@ -121,19 +121,19 @@
  */
 function calculateTotal(luckyNumber,totalAmount) {
     if (luckyNumber === 0) {
-        console.log("Oh no!, It seems you're out of luck. We don't have a discount for you today.")
+        alert("Oh no!, It seems you're out of luck. We don't have a discount for you today.")
     } else if (luckyNumber === 1) {
-        console.log('Your lucky number is 1! A 10% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.10))))
+        alert('Your lucky number is 1! A 10% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.10))))
     } else if (luckyNumber === 2) {
-        console.log('Your lucky number is 2! A 25% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.25))))
+        alert('Your lucky number is 2! A 25% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.25))))
     } else if (luckyNumber === 3) {
-        console.log('Your lucky number is 3! A 35% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.35))))
+        alert('Your lucky number is 3! A 35% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.35))))
     } else if (luckyNumber === 4) {
-        console.log('Your lucky number is 4! A 50% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.50))))
+        alert('Your lucky number is 4! A 50% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.50))))
     } else if (luckyNumber === 5) {
-        console.log('HUZZAH!, Your lucky number is 5. Your entire cart will be FREE today!')
+        alert('HUZZAH!, Your lucky number is 5. Your entire cart will be FREE today!')
 }}
-calculateTotal(4,50);
+//calculateTotal(4,50);
 
 /**
  * TODO:
@@ -144,7 +144,10 @@ calculateTotal(4,50);
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+let luckyNumber = Math.floor(Math.random() * 6);
+let totalAmount = prompt("It looks like you're ready for checkout! Let us know your cart total and we'll see if it's your lucky day for a discount:");
+
+calculateTotal(luckyNumber,totalAmount);
 
 /**
  * TODO:
