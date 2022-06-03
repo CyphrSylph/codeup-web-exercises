@@ -60,34 +60,34 @@
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-function analyzeColor(colorName) {
-
-    switch(colorName) {
-        case "Red":
-            console.log('Red pigment was made from ochre in prehistoric art.');
-            break;
-        case "Orange":
-            console.log('Orange comes from a photosynthetic pigment called carotenes.');
-            break;
-        case "Yellow":
-            console.log('The Egyptians made Yellow with a mix of ochre and orpiment.');
-            break;
-        case "Green":
-            console.log('The Greeks introduced verdigris, the first artificial green pigment.');
-            break;
-        case "Blue":
-            console.log('The first blue pigment was a natural mineral called azurite.');
-            break;
-        case "Indigo":
-            console.log('Indigo pigment is created by extracting leaves of the plant Indigofera tinctoria.');
-            break;
-        case "Violet":
-            console.log('The first violet pigment was prepared with cobalt in 1859.');
-            break;
-        default:
-            console.log("Hmm, it seems I can't locate that color in the codex.");
-            break;
-    }}
+// function analyzeColor(colorName) {
+//
+//     switch(colorName) {
+//         case "Red":
+//             console.log('Red pigment was made from ochre in prehistoric art.');
+//             break;
+//         case "Orange":
+//             console.log('Orange comes from a photosynthetic pigment called carotenes.');
+//             break;
+//         case "Yellow":
+//             console.log('The Egyptians made Yellow with a mix of ochre and orpiment.');
+//             break;
+//         case "Green":
+//             console.log('The Greeks introduced verdigris, the first artificial green pigment.');
+//             break;
+//         case "Blue":
+//             console.log('The first blue pigment was a natural mineral called azurite.');
+//             break;
+//         case "Indigo":
+//             console.log('Indigo pigment is created by extracting leaves of the plant Indigofera tinctoria.');
+//             break;
+//         case "Violet":
+//             console.log('The first violet pigment was prepared with cobalt in 1859.');
+//             break;
+//         default:
+//             console.log("Hmm, it seems I can't locate that color in the codex.");
+//             break;
+//     }}
 
 /**
  * TODO:
@@ -95,8 +95,8 @@ function analyzeColor(colorName) {
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
-let colorName = prompt('Chose a color from the Visible Color Spectrum:')
-analyzeColor(colorName);
+// let colorName = prompt('Chose a color from the Visible Color Spectrum:')
+// analyzeColor(colorName);
 
 /* ########################################################################## */
 
@@ -119,6 +119,21 @@ analyzeColor(colorName);
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+function calculateTotal(luckyNumber,totalAmount) {
+    if (luckyNumber === 0) {
+        console.log("Oh no!, It seems you're out of luck. We don't have a discount for you today.")
+    } else if (luckyNumber === 1) {
+        console.log('Your lucky number is 1! A 10% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.10))))
+    } else if (luckyNumber === 2) {
+        console.log('Your lucky number is 2! A 25% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.25))))
+    } else if (luckyNumber === 3) {
+        console.log('Your lucky number is 3! A 35% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.35))))
+    } else if (luckyNumber === 4) {
+        console.log('Your lucky number is 4! A 50% discount will be applied to your cart for a total of ' + (totalAmount - (totalAmount *(.50))))
+    } else if (luckyNumber === 5) {
+        console.log('HUZZAH!, Your lucky number is 5. Your entire cart will be FREE today!')
+}}
+calculateTotal(4,50);
 
 /**
  * TODO:
