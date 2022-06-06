@@ -22,6 +22,9 @@
      */
 
     function analyzeColor(colorName) {
+
+        colorName = colorName.toLowerCase()
+
         if (colorName === 'Red') {
             console.log('Red pigment was made from ochre in prehistoric art.');
         } else if (colorName === 'Orange') {
@@ -67,6 +70,8 @@
 
     function analyzeColor2(colorName) {
 
+        colorName = colorName.toLowerCase()
+
         switch (colorName) {
             case "Red":
                 console.log('Red pigment was made from ochre in prehistoric art.');
@@ -103,8 +108,9 @@
      * function to show it to the user.
      */
 
-    let colorName = prompt('Chose a color from the Visible Color Spectrum:')
-    analyzeColor2(colorName);
+    let colorName = prompt('Choose a color from the Visible Color Spectrum:')
+
+    alert(analyzeColor2(colorName));
 
 
     /* ########################################################################## */
