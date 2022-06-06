@@ -23,7 +23,7 @@
 
     function analyzeColor(colorName) {
 
-        colorName = colorName.toLowerCase()
+        colorName = colorName.toLowerCase() //translates input to lowercase
 
         if (colorName === 'Red') {
             console.log('Red pigment was made from ochre in prehistoric art.');
@@ -166,7 +166,7 @@
 
     let totalAmount = prompt("It looks like you're ready for checkout! Let us know your cart total and we'll see if it's your lucky day for a discount:");
     calculateTotal(luckyNumber, totalAmount);
-
+        alert ("Your lucky number is " + luckyNumber + " !");
 
     /**
      * TODO:
