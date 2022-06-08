@@ -37,31 +37,22 @@
 	//between 1 and 5, simulating the amount of cones being bought by her clients. Use a do-while loop
 	//to log to the console the amount of cones sold to each person.
 
-	//The below code shows how to get the random numbers for this exercise:
+	let allCones = Math.floor(Math.random() * 50) + 50; // This is how you get a random number between 50 and 100
 
-	// Randomize amount of all cones - fixed
-	// initialize cones remaining
-	// initialize cones sold
-	// write a while loop that evaluates cones sold with respect to total inventory of cones
-	// randomize how many cones you sell each time
-	// store how many cones you have remaining
-	// conditionally evaluate if you're trying to sell more cones than you have and if you still have cones remaining
-	// close out the loop if you sell all of your cones
-	// increase your counter
+	do {
+		let soldCones = Math.floor(Math.random() * 5) + 1; // Expression generates a random number between 1 and 5
 
-	// This is how you get a random number between 50 and 100
-	let allCones = Math.floor(Math.random() * 50) + 50;
-	// This expression will generate a random number between 1 and 5
-	let soldCones = Math.floor(Math.random() * 5) + 1;
+		if(allCones >= soldCones){
+			//Cones Available
+			allCones = allCones - soldCones; // Remove sold cones from total cones
+			console.log(soldCones + ' cones sold! I have ' + allCones);
+		} else {
+			//Cones Unavailable
+			console.log("Sorry, there are only " + allCones + " left. I can't sell" + soldCones + ".")
+		}
 
-	while {
-
-		soldCones = Math.floor(Math.random() * 5) + 1;
-
-		console.log
-
-
-
-
+	} while (allCones !== 0);
+	// All Cones Sold
+	console.log('Thank yo- All cones have been sold!')
 
 })();
