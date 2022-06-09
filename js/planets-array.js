@@ -18,19 +18,20 @@
 	 * the step that it describes
 	 */
 
-	planets.unshift('Sun');
+
 	console.log('Adding "The Sun" to the beginning of the planets array.');
+	planets.unshift('Sun');
 	console.log(planets);
 
-	planets.push('Pluto')
 	console.log('Adding "Pluto" to the end of the planets array.');
+	planets.push('Pluto');
 	console.log(planets);
 
-	let removeSun = planets.shift()
+	let removeSun = planets.shift();
 	console.log('Removing "The Sun" from the beginning of the planets array.' + removeSun);
 	console.log(planets);
 
-	let removePluto = planets.pop()
+	let removePluto = planets.pop();
 	console.log('Removing "Pluto" from the end of the planets array.' + removePluto);
 	console.log(planets);
 
