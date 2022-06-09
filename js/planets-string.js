@@ -5,7 +5,7 @@
 
 	/**
 	 * TODO:
-	 * Convert planetsString to an array, and save it in a variable named
+	 * Convert planetsString to an array, and save it in the variable named
 	 * planetsArray.
 	 * console.log planetsArray to check your work
 	 */
@@ -27,13 +27,22 @@
 	let planetsSecondString = planetsArray.join('<br>'); // With Break Tags
 	console.log(planetsSecondString);
 
-	let planetsSecondString2 = planetsArray.join('\n'); // With Line Breaks
-	console.log(planetsSecondString2);
+	let planetsThirdString = planetsArray.join('\n'); // With Line Breaks
+	console.log(planetsThirdString);
 
-	// function planetsList(planetsSecondString2) {
-	//
-	// }
-	//
-	// planetsList();
+	// BONUS EXERCISE
+	planetsArray.forEach(function(planet, index) {
+		planetsArray[index] = '<li>' + planet + '</li>'
+	})
+	console.log(planetsArray);
+
+	planetsArray.unshift('<ul>')
+	console.log(planetsArray);
+
+	planetsArray.push('</ul>')
+	console.log(planetsArray);
+
+	let planetsBonusString = planetsArray.join('\n')
+	console.log(planetsBonusString);
 
 })();
