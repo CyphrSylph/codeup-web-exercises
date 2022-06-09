@@ -15,6 +15,7 @@
 	 * array.
 	 */
 
+	console.log('Logging name length...')
 	console.log(names.length);
 
 	/**
@@ -23,6 +24,7 @@
 	 * accessing each element's index.
 	 */
 
+	console.log('Logging individual elements...')
 	console.log(names[0]);
 	console.log(names[1]);
 	console.log(names[2]);
@@ -34,6 +36,7 @@
 	 * array.
 	 */
 
+	console.log('Logging elements with for loop...')
 	for(let i = 0; i < names.length; i++) { // The index number is used with the operator
 		console.log(names[i]); // The number of times the loop has run is still represented by "i"
 	}
@@ -43,9 +46,16 @@
 	 * Refactor your above code to use a `forEach` loop
 	 */
 
+	console.log('Logging elements with forEach loop...')
 	names.forEach(function (name) {
 		console.log(name);
 	})
+
+	console.log('Logging elements and index with forEach loop...')
+	names.forEach(function (name, index) {
+		console.log(name, index);
+	})
+
 
 	/**
 	 * TODO:
@@ -83,7 +93,8 @@
 		return array[nums.length - 1]; // .length -1 returns the last element in the array: 5
 	}
 
-	last(nums);
-
+	console.log('Logging first element in array...' + first(nums));
+	console.log('Logging second element in array...' + second(nums));
+	console.log('Logging last element in array...' + last(nums));
 
 })();
