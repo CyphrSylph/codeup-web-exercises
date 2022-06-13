@@ -57,6 +57,8 @@
 	    {name: 'George', amount: 320}
 	];
 
+	// Method 1 forEach:
+
 	shoppers.forEach(function(total){
 		if (total.amount > 200) {
 		let finalTotal = .88 * total.amount
@@ -65,6 +67,21 @@
 			console.log(`Hello ${total.name} your total is ${total.amount}.`)
 		}
 	})
+
+	// // Method 2 forLoop:
+	//
+	// for (let i = 0; i < shoppers.length; i++) {
+	// 	const shopper = shoppers[i];
+	// 	console.log(shopper)
+	// 	let outputString = `${shopper.name} ${shopper.amount}`;
+	// 		if(shopper.amount > 200){
+	// 			let discount = shopper.amount * .12;
+	// 			let afterDiscountAmount = shopper.amount - discount;
+	// 			outputString += `${discount.toFixed(2)} ${afterDiscountAmount.toFixed(2)}`
+	// 		}
+	// 	console.log(outputString);
+	// }
+
 
 	/** TODO:
 	 * Create an array of objects that represent books and store it in a
@@ -98,6 +115,33 @@
 		title: ['The Raven', 'The Masque of the Red Death', 'The Tell-Tale Heart']
 	}]
 
+	// Alternate Method:
+
+	// let books = [];
+	// const book1 = {
+	// 	title: 'Book 1',
+	// 	author: {
+	// 		firstName: '',
+	// 		lastName: ''
+	// 	}
+	// }
+	// const book2 = {
+	// 	title: 'Book 2',
+	// 	author: {
+	// 		firstName: '',
+	// 		lastName: ''
+	// 	}
+	// }
+	// const book3 = {
+	// 	title: 'Book 3',
+	// 	author: {
+	// 		firstName: '',
+	// 		lastName: ''
+	// 	}
+	// }
+	// console.log(books[2].book[3]);
+
+
 	/**
 	 * TODO:
 	 * Loop through the books array and output the following information about
@@ -123,6 +167,8 @@
 	 *      ...
 	 */
 
+	// Method 1:
+
 	let bookNumber = 1
 
 	books.forEach(function(book){
@@ -133,6 +179,21 @@
 			bookNumber++
 		})
 	})
+
+	// Method 2:
+
+	// for (let i=0; i < books.length; i++) {
+	// 	const book = books[i];
+	// 	//console.log(book);
+	//
+	// 	let outputString = `Book # ${i + 1}
+	// 	Title: ${book.title}
+	// 	Author: ${book.author.firstName} ${book.author.lastName}
+	// 	-------------`;
+	//
+	// 	console.log(outputString);
+	// }
+
 
 	/**
 	 * Bonus:
@@ -145,12 +206,13 @@
 	 *   `showBookInfo` function.
 	 */
 
+	// Bonus Method 1
+
 	function createBook(bookTitle, bookAuthor) {
-		let book = [{
+		return [{
 			author: bookAuthor,
 			title: bookTitle
-		}]
-		return book;
+		}];
 	}
 	createBook('','')
 
