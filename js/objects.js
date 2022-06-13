@@ -68,7 +68,21 @@
 		}
 	})
 
-	// // Method 2 forLoop:
+	// Method 2 forEach:
+
+	// shoppers.forEach(function(shopper) {
+	// 	// console.log(shopper);
+	// 	let outputString = `${shopper.name} ${shopper.amount}`;
+	// 	if(shopper.amount > 200){
+	// 		const discount = shopper.amount * .12;
+	// 		const afterDiscountAmount = shopper.amount - discount;
+	// 		outputString += `${discount.toFixed(2)} ${afterDiscountAmount.toFixed(2)}`
+	// 	}
+	//
+	// 	console.log(outputString);
+	// });
+
+	// Method 3 forLoop:
 	//
 	// for (let i = 0; i < shoppers.length; i++) {
 	// 	const shopper = shoppers[i];
