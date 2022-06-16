@@ -2,11 +2,10 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="UTF-8">
-	<title>Forms</title>
+	<title>Register With Us</title>
 </head>
 <body>
-	<h1>Register With Us</h1>
-	<form method="POST" action="https://request-inspector.glitch.me/">
+	<form method="POST" action="https://request-inspector.glitch.me/" id="myForm">
 
 		<label for="Email">Email:</label><br>
 			<input id="Email" type="text" name="email" placeholder="Enter your email address"><br><br>
@@ -15,7 +14,7 @@
 			<input id="Password" type="Password" name="Password" placeholder="Enter your password"><br><br>
 
 		<label for="Bio">Bio:</label><br>
-			<textarea id="Bio" name="Bio" placeholder= "Tell us about yourself"></textarea><br><br>
+			<textarea id="Bio" name="Bio" placeholder= "Tell us about yourself" form="myForm"></textarea><br><br>
 
 		<h3>How did you hear about us?</h3>
 		Select all that apply:<br>
@@ -41,7 +40,7 @@
 			</select>
 		</label>
 		<br><br><br>
-		<button type="submit">Submit Form</button>
+		<button type="submit">Register Now</button>
 	</form>
 </body>
 </html>
