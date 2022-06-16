@@ -1,0 +1,86 @@
+
+h1 {
+    text-align: center;
+    color: chocolate;
+}
+
+h2 {
+    color: chocolate;
+    text-decoration: underline;
+}
+
+h4 {
+    text-align: center;
+}
+
+body {
+    background-color: floralwhite;
+    background-image: url('../img/gravel.jpeg');
+    font-family: Niramit, sans-serif;
+}
+
+ul {
+    list-style: circle;
+    text-align: left;
+}
+
+.box {
+    display: flex;
+    width: 100%;
+    text-align: left;
+    justify-content: space-evenly;
+}
+
+a:link {
+    color: chocolate;
+}
+
+a:visited {
+    color: brown;
+}
+
+a:hover {
+    color: coral;
+}
+
+a:active {
+    color: orange;
+}
+
+img{
+    width: 33%;
+    height: auto;
+    border-radius: 13px;
+}
+
+.images {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.products {
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    width: 66%;
+}
+
+th {
+    font-size: large;
+    border: 2px solid;
+    width: 33%;
+    text-align: center;
+}
+
+td {
+    font-size: medium;
+    text-align: center;
+    padding: 10px
+}
+
+footer {
+    text-align: center;
+}
