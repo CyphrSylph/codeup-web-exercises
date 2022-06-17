@@ -64,17 +64,17 @@ a {
 }
 .profile-details {
     float: left;
-    margin: .5em .5em;
+    margin: 0 .5em;
     width: calc(25% - 1em);
 }
 .timeline {
     float: left;
-    margin: .5em .5em;
+    margin: 0 .5em;
     width: calc(50% - 1em);
 }
 .who-to-follow {
     float: right;
-    margin: .5em .5em;
+    margin: 0 .5em;
     width: calc(25% - 1em);
 }
 .btn {
@@ -98,4 +98,28 @@ a {
 }
 .text-muted {
     color: var(--main-link-color);
+}
+.media {
+    width: 100%;
+    background-color: var(--light-bg);
+    border-bottom: 1px solid var(--separator-color);
+    padding: .5em;
+    overflow: auto;
+}
+.media-image {
+    width: 50px;
+    float: left;
+    margin-top: 1.33em;
+}
+.media-body {
+    width: calc(100% - 50px);
+    float: left
+
+}
+.profile-items {
+    padding: 0;
+    list-style: none;
+}
+.profile-entry {
+    margin: .5em;
 }
