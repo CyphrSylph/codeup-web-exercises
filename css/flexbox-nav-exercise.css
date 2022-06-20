@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+nav {
+    background: #333333;
+    text-decoration: none;
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    display: inline-block;
+}
+a:hover {
+    color: blue;
+}
+a:link {
+    text-decoration: none;
+}
