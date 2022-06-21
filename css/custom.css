@@ -1,0 +1,8 @@
+
+.jumbotron {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 346px;
+    align-items: center;
+}
