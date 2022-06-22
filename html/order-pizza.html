@@ -42,23 +42,230 @@
 				<button class="nav-link active" id="nav-style-tab" data-bs-toggle="tab" data-bs-target="#nav-style" type="button" role="tab" aria-controls="nav-style" aria-selected="true">
 					<span class="badge bg-secondary">1</span> Style</button>
 				<button class="nav-link" id="nav-size-tab" data-bs-toggle="tab" data-bs-target="#nav-size" type="button" role="tab" aria-controls="nav-size" aria-selected="false">
-				<span class="badge bg-secondary">2</span> Size</button>
+					<span class="badge bg-secondary">2</span> Size</button>
 				<button class="nav-link" id="nav-sauce-tab" data-bs-toggle="tab" data-bs-target="#nav-sauce" type="button" role="tab" aria-controls="nav-sauce" aria-selected="false">
-				<span class="badge bg-secondary">3</span> Sauce</button>
+					<span class="badge bg-secondary">3</span> Sauce</button>
 				<button class="nav-link" id="nav-cheese-tab" data-bs-toggle="tab" data-bs-target="#nav-cheese" type="button" role="tab" aria-controls="nav-cheese" aria-selected="false">
-				<span class="badge bg-secondary">4</span> Cheese</button>
+					<span class="badge bg-secondary">4</span> Cheese</button>
 				<button class="nav-link" id="nav-xtras-tab" data-bs-toggle="tab" data-bs-target="#nav-toppings" type="button" role="tab" aria-controls="nav-toppings" aria-selected="false">
-				<span class="badge bg-secondary">5</span> Xtras</button>
+					<span class="badge bg-secondary">5</span> Xtras</button>
 			</div>
 		</nav>
 		<div class="tab-content" id="nav-tabContent">
-			<div class="tab-pane fade show active" id="nav-style" role="tabpanel" aria-labelledby="nav-style-tab">...</div>
-			<div class="tab-pane fade" id="nav-size" role="tabpanel" aria-labelledby="nav-size-tab">...</div>
-			<div class="tab-pane fade" id="nav-sauce" role="tabpanel" aria-labelledby="nav-sauce-tab">...</div>
-			<div class="tab-pane fade" id="nav-cheese" role="tabpanel" aria-labelledby="nav-cheese-tab">...</div>
-			<div class="tab-pane fade" id="nav-xtras" role="tabpanel" aria-labelledby="nav-xtras-tab">...</div>
+			<div class="tab-pane fade show active" id="nav-style" role="tabpanel" aria-labelledby="nav-style-tab">
+				<div class="card">
+					<h4 class="card-header">Crust Style</h4>
+					<div class="card-body">
+						<div class="card">
+							<div class="card-header">
+								<h5>Hand-Tossed:</h5>
+							</div>
+							<div class="pizzaStyle">
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="pizzaStyle" id="originalHandTossed" value="option1">
+									<label class="form-check-label" for="originalHandTossed">
+										Original Recipe
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="pizzaStyle" id="garlicHandTossed" value="option1">
+									<label class="form-check-label" for="garlicHandTossed">
+										Garlic Space Dust
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="pizzaStyle" id="cheeseHandTossed" value="option1">
+									<label class="form-check-label" for="cheeseHandTossed">
+										Cheese Explosion
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header">
+								<h5>Thin & Crispy:</h5>
+							</div>
+							<div class="thinCrispy">
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="pizzaStyle" id="originalCrispy" value="option1">
+									<label class="form-check-label" for="originalCrispy">
+										Original Recipe
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="pizzaStyle" id="garlicCrispy" value="option1">
+									<label class="form-check-label" for="garlicCrispy">
+										Garlic Space Dust
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="pizzaStyle" id="veganCrispy" value="option1">
+									<label class="form-check-label" for="veganCrispy">
+										Vegan Flower Power
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn btn-primary">Next</a>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="nav-size" role="tabpanel" aria-labelledby="nav-size-tab">
+				<div class="card">
+					<h4 class="card-header">Size Selector</h4>
+					<div class="card-body">
+						<div class="card">
+							<div class="card-header">
+								<h5>Basic Sizes:</h5>
+							</div>
+							<div class="pizzaSize">
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="pizzaSize" id="sizeSmall" value="option1">
+									<label class="form-check-label" for="sizeSmall">
+										Small 10"
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="pizzaSize" id="sizeMedium" value="option1">
+									<label class="form-check-label" for="sizeMedium">
+										Medium 12"
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="pizzaSize" id="sizeLarge" value="option1">
+									<label class="form-check-label" for="sizeLarge">
+										Large 16"
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header">
+								<h5>Specialty Sizes:</h5>
+							</div>
+							<div class="basicSize">
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="pizzaSize" id="sizeVenus" value="option1">
+									<label class="form-check-label" for="sizeVenus">
+										Venutian 22"
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="pizzaSize" id="sizeXL" value="option1">
+									<label class="form-check-label" for="sizeXL">
+										Xtraterrestrial 32"
+									</label>
+								</div>
+							</div>
+						</div>
+						<a href="#" class="btn btn-primary">Next</a>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="nav-sauce" role="tabpanel" aria-labelledby="nav-sauce-tab">
+				<div class="card">
+					<h4 class="card-header">Sauce Selector</h4>
+					<div class="card-body">
+						<div class="card">
+							<div class="card-header">
+								<h5>Select a sauce:</h5>
+							</div>
+							<div class="sauceAmount">
+									<select class="form-select" aria-label="Default select example">
+										<option value="1" selected>OG Sauce</option>
+										<option value="2">Martian Sauce</option>
+										<option value="3">Solar Sauce</option>
+									</select>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header">
+								<h5>How much sauce?</h5>
+							</div>
+							<div class="sauceAmount">
+								<select class="form-select" aria-label="Default select example">
+									<option value="1">Light Sauce</option>
+									<option value="2" selected>Regular Sauce</option>
+									<option value="3">Too Much Sauce</option>
+								</select>
+							</div>
+						</div>
+						<a href="#" class="btn btn-primary">Next</a>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="nav-cheese" role="tabpanel" aria-labelledby="nav-cheese-tab">
+				<div class="card">
+					<h4 class="card-header">Cheese Choices</h4>
+					<div class="card-body">
+						<div class="card">
+							<div class="card-header">
+								<h5>Cheese Blends:</h5>
+							</div>
+							<div class="cheeseType">
+								<select class="form-select" aria-label="Default select example">
+									<option value="1" selected>OG Mix</option>
+									<option value="2">Six Mix</option>
+									<option value="3">Solar Mix</option>
+								</select>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header">
+								<h5>How much cheese?</h5>
+							</div>
+							<div class="cheeseAmount">
+								<select class="form-select" aria-label="Default select example">
+									<option value="1">Light Cheese</option>
+									<option value="2" selected>Regular Cheese</option>
+									<option value="3">Xtra Cheese</option>
+								</select>
+							</div>
+						</div>
+						<a href="#" class="btn btn-primary">Next</a>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="nav-xtras" role="tabpanel" aria-labelledby="nav-xtras-tab">
+				<div class="card">
+					<h4 class="card-header">Toppings</h4>
+					<div class="card-body">
+						<div class="card">
+							<div class="card-header">
+								<h5>Meat Eaters:</h5>
+							</div>
+							<div class="meatTopping">
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+									<label class="form-check-label" for="flexRadioDefault1">
+										Default radio
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+									<label class="form-check-label" for="flexRadioDefault2">
+										Default checked radio
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header">
+								<h5>Veg Heads:</h5>
+							</div>
+							<div class="vegTopping">
+								<select class="form-select" aria-label="Default select example">
+									<option value="1">Light Cheese</option>
+									<option value="2" selected>Regular Cheese</option>
+									<option value="3">Xtra Cheese</option>
+								</select>
+							</div>
+						</div>
+						<a href="#" class="btn btn-primary">Next</a>
+					</div>
+				</div>
+			</div>
 		</div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 		<!-- Your custom JS goes here -->
