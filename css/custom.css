@@ -6,3 +6,13 @@
     height: 346px;
     align-items: center;
 }
+
+.card {
+    margin: 1em;
+}
+
+.form-check {
+    padding-left: 2.5em;
+    margin: 5px;
+}
+
