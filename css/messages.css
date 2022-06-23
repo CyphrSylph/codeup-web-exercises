@@ -24,16 +24,16 @@ body, html {
 }
 
 .message-success {
-    background-color:lightgreen;
+    background-color: lightgreen;
     color:darkgreen;
 }
 
 .message-warning {
-    background-color:lightgoldenrodyellow;
-    color:palegoldenrod;
+    background-color: khaki;
+    color: darkgoldenrod;
 }
 
 .message-error {
-    background-color:palevioletred;
-    color:indianred;
+    background-color: plum;
+    color: purple;
 }
