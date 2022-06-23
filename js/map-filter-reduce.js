@@ -85,30 +85,29 @@ const longestEmail = users.reduce(function(longEmail, user)  {
 	}
 	return longEmail;
 }, '');
-console.log('The longest email from the list of users is ' + longestEmail)
+console.log('The longest email from the list of users is ' + longestEmail);
 
 
 //	EXERCISE 6
 // 	Use .reduce to get the list of user's names in a single string.
 // 	Example: Your instructors are: Ryan, Luis, Zach, Fernando, Justin.
 
-// let allUserNames = users.reduce(function(names,user) {
-// 	console.log('All user names so far '+ names);
-// });
-// allUserNames = allUserNames.substr(0,allUserNames.length-2);
-//
-// console.log(allUserNames);
+let allUserNames = users.reduce(function(names,user) {
+	console.log('All user names so far '+ names);
+});
+allUserNames = allUserNames.substr(0,allUserNames.length-2);
+
+console.log(allUserNames);
 
 
 
 //  BONUS EXERCISE
 // 	Use .reduce to get the unique list of languages from the list of users.
 
-// let uniqueLanguages = users.reduce(function(languageSet,user) {
-// 	for (let language of user.languages) {
-// 		languageSet.add(language)
-// 	}
-// 	return languageSet;
-// }, new Set());
-// console.log(uniqueLanguages);
-// })()
+let uniqueLanguages = users.reduce(function(languageSet,user) {
+	for (let language of user.languages) {
+		languageSet.add(language)
+	}
+	return languageSet;
+}, new Set());
+console.log(uniqueLanguages);
