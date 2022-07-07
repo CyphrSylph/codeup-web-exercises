@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script>
+	"use strict";
+
+	// CREATE FUNCTION TO CHECK EACH KEYPRESS IN REFERENCE TO CODE SEQUENCE:
+
+	// DEFINE ARRAY FOR KONAMI CODE:
+	let konamiCode = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
+	let current = 0;
+
+	// DEFINE AND LOG KEYPRESS:
+	let keyHandler = function (event) {
+		console.log(event.key);
+
+		// RESTART CHECK IF KEY OR KEYS ARE NOT FOUND
+		if (konamiCode.indexOf(event.key) < 0) {
+			current = 0;
+			return;
+		}
+
+	};
+
+	// LISTENER FOR KEYDOWN EVENTS:
+	document.addEventListener('keydown', keyHandler, false);
+
+	// LISTENER COPIED FROM MODIFIED LESSON:
+	// document.addEventListener("keyup", function(event) {
+	// 	console.log(event.keyCode);
+	// });
+
+
+
+</script>
+</body>
+</html>
