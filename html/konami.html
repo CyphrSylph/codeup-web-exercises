@@ -1,42 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<title>Konami Code</title>
-</head>
-<body>
-<h1>Konami Code</h1>
+	<title>KONAMI CODE</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<!--INLINE CSS-->
+	<style>
+		/*body {*/
+        /*    background-image: linear-gradient(#345E8B, #2E1532);*/
+		/*}*/
 
-<script>
-	"use strict";
-
-	// CREATE FUNCTION TO CHECK EACH KEYPRESS IN REFERENCE TO CODE SEQUENCE:
-
-	// DEFINE ARRAY FOR KONAMI CODE:
-	let konamiCode = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
-	let current = 0;
-
-	// DEFINE AND LOG KEYPRESS:
-	let keyHandler = function (event) {
-		console.log(event.key);
-
-		// RESTART CHECK IF KEY OR KEYS ARE NOT FOUND
-		if (konamiCode.indexOf(event.key) < 0) {
-			current = 0;
-			return;
+		#cypher {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -100px;
+            font-family: 'VT323', monospace;
+			/*color: #58DAD1;*/
 		}
+	</style>
+</head>
 
-	};
+<body>
+<!--PAGE INFO/DIRECTIONS:-->
+	<div id="cypher">
+		<h2>CYPHER CODEX TO CONTINUE:</h2>
+	</div>
 
-	// LISTENER FOR KEYDOWN EVENTS:
-	document.addEventListener('keydown', keyHandler, false);
+	<script>
+		"use strict";
 
-	// LISTENER COPIED FROM MODIFIED LESSON:
-	// document.addEventListener("keyup", function(event) {
-	// 	console.log(event.keyCode);
-	// });
+		// CREATE A FUNCTION TO CHECK EACH KEYPRESS IN REFERENCE TO SET SEQUENCE:
+
+		// DEFINE AN ARRAY FOR THE SEQUENCE USING AN ARRAY:
+		let konamiCode = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
+		let index = 0;
+
+		// DEFINE AND LOG KEYPRESS FROM USER INPUT:
+		let cypherCodex = function (event) {
+			console.log(event.key);
+
+			// CHECK USER KEYPRESS FOR MATCH IN SEQUENCE/ARRAY AND RESTART IF NOT FOUND:
+			if (konamiCode.indexOf(event.key) < 0 || event.key !== konamiCode[index]) {
+				index = 0;
+			}
+			// UPDATE COMPLETED CODE:
+			index++;
+
+			// ALERT & RESTART IF COMPLETE:
+			if (konamiCode.length === index) {
+				index = 0;
+				window.alert('Codex Unlocked');
+			}
+		};
+
+		// LISTENER FOR KEYDOWN EVENTS:
+		document.addEventListener('keydown', cypherCodex, false);
 
 
+		// ALTERNATE METHOD:
+		// let keysPressed = [];
+		// document.addEventListener('keyup', function (event) {
+		// 	keysPressed.push(event.key);
+		// 	console.log(keysPressed.toString());
+		//
+		// 	if(enterKonamiCode() === true) {
+		// 		console.log('You get 30 lives!');
+		// 	}
+		// });
+		//
+		// function enteredKonamiCode() {
+		// 	const konamiCode = 'ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter')
+		// 	if(keysPressed.toString().includes(konamiCode) === true) {
+		// 		keysPressed.length = 0;
+		// 		return true;
+		// 	}
+		// 	return false;
+		// }
 
-</script>
+	</script>
 </body>
 </html>
