@@ -13,12 +13,18 @@
         .green-background {
             background-color: green;
         }
+
+        .color {
+	        color: gold;
+        }
 	</style>
 </head>
 <body>
 
 <h1>National Parks FAQ</h1>
 
+<!-- TODO: ADD 3 UNORDERED LISTS UNDER THE FAQs SECTION:-->
+<!-- TODO: EACH LIST SHOULD CONTAIN A NAME IN AN h3 ELEMENT AND A ul OF 4 FACTS:-->
 <h1>Parks List</h1>
 <div id="national-parks-div">
 	<h3 id="national-parks-heading">National Parks</h3>
@@ -27,7 +33,7 @@
 		<li>Badlands</li>
 		<li>Carlsbad Caverns</li>
 		<li>Denali</li>
-		<li>Everglades</li>
+		<li class="featuredItem">Everglades</li>
 	</ul>
 </div>
 <div id="state-parks-div">
@@ -37,7 +43,17 @@
 		<li>Big Bend</li>
 		<li>Choke Canyon</li>
 		<li>Davis Mountains</li>
-		<li>Enchanted Rock</li>
+		<li class="featuredItem">Enchanted Rock</li>
+	</ul>
+</div>
+<div id="state-parks-div">
+	<h3 id="state-parks-heading">State Parks of Texas</h3>
+	<ul id="state-parks-texas">
+		<li>Abilene</li>
+		<li>Big Bend</li>
+		<li>Choke Canyon</li>
+		<li>Davis Mountains</li>
+		<li class="featuredItem">Enchanted Rock</li>
 	</ul>
 </div>
 
@@ -76,32 +92,65 @@
 <!--<a id="inviso-toggle" href="">Toggle Visibility</a>-->
 <button id="inviso-toggle">Toggle Visibility</button>
 
+<!--BUTTON TO HIGHLIGHT/COLOR LAST ITEM IN LIST:-->
+<button id="featureToggle">Featured Items</button>
+
 <script>
-	// 1. get a reference for the anchor
+	// SET REFERENCE FOR ANCHOR:
 	const myToggle = document.querySelector("#inviso-toggle");
 
-	// 2. add a click event listener to the anchor
+	// ADD CLICK EVENT LISTENER TO ANCHOR:
 	myToggle.addEventListener("click", function(event) {
-		// 3. in the event listener function, toggle the class invisible
-		// 3.a. get all the dds
-		// 3.b. for each dd, toggle its invisible class
+		// TOGGLE CLASS INVISIBLE IN EVENT LISTENER FUNCTION
+		// GRAB AND TOGGLE ALL THE dd ELEMENTS INVISIBLE:
 		const myDDs = document.querySelectorAll("dd");
 		myDDs.forEach(function(dd) {
 			dd.classList.toggle("invisible");
 		})
 	});
 
-	// BONUS
-	// 1. target all dt elements
+	// BONUS EXERCISE:
+	// TARGET ALL dt ELEMENTS:
 	const myDTs = document.querySelectorAll("dt");
 	myDTs.forEach(function(dt) {
-		// 2. add a click event listener to each dt element
+		// ADD CLICK EVENT LISTENER AT EACH dt ELEMENT:
 		dt.addEventListener("click", function(event) {
-			// 3. when it is clicked, turn its background color to green
-			// this.style.backgroundColor = "green";
+			// TURN BACKGROUND COLOR OF dt ELEMENT GREEN WHEN CLICKED:
 			this.classList.toggle("green-background");
 		});
 	})
+
+
+	// TODO: CREATE A BUTTON THAT, WHEN CLICKED, MAKES THE LAST li ELEMENT IN EACH ul HAVE A YELLOW BACKGROUND
+	// SET REFERENCE FOR ANCHOR:
+	const colorToggle = document.querySelector('#featureToggle');
+	// ADD CLICK EVENT LISTENER TO ANCHOR:
+	colorToggle.addEventListener('click', function(event) {
+		// TOGGLE CLASS COLOR IN EVENT LISTENER FUNCTION
+		// GRAB AND TOGGLE THE LAST li IN EACH ul:
+		const lastItem = document.querySelectorAll('.featuredItem');
+		lastItem.forEach(function(li) {
+			li.classList.toggle('color');
+		})
+	});
+
+	// TODO: BOLD THE li WHEN THE ASSOCIATED h3 IS CLICKED USING fontWeight= "bold"
+	// TODO: USE .this IN THE EVENT LISTENER TO ACCESS THE NEXT SIBLING OF THE ASSOCIATED h3
+	// TARGET ALL ul HEADERS:
+	const boldHeader = document.querySelectorAll('h3');
+		// ADD CLICK EVENT LISTENER AT EACH HEADER OF ul ELEMENT:
+	boldHeader.forEach(function (h3) {
+		h3.addEventListener('click', function(event) {
+			//TARGET li ELEMENTS USING .nextElementSibling:
+			const boldItem = this.nextElementSibling.children
+			// CHANGE CLASS FONT WEIGHT OF li ELEMENTS:
+			for (let i = 0; i < boldItem.length; i++) {
+				boldItem[i].style.fontWeight = "bolder";
+			}
+		});
+	});
+
+
 </script>
 </body>
 </html>
