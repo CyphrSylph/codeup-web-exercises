@@ -37,22 +37,34 @@
 	        height: 200px;
         }
 
+        .galleryFrame {
+	        display: flex;
+	        flex-direction: column;
+	        align-items: center;
+        }
+
+        .galleryBtn {
+	        margin: 1em;
+	        padding: 5px;
+	        width: 130px;
+        }
+
 	</style>
 </head>
 <body>
 	<div class="imageGallery">
 		<div class="gallerySpace"></div>
 		<div class="galleryFrame">
-			<img src="../img/labryinthos.jpg" class="galleryImage">
-			<button id="imgBtn1">A</button>
+			<img src="../img/labryinthos.jpg" class="galleryImage" id="labryinthosImg">
+			<button class="galleryBtn">TRAVERSE</button>
 		</div>
 		<div class="galleryFrame">
-			<img src="../img/thavnair.jpg" class="galleryImage">
-			<button id="imgBtn2">B</button>
+			<img src="../img/thavnair.jpg" class="galleryImage" id="thavnairImg">
+			<button class="galleryBtn">TRAVERSE</button>
 		</div>
 		<div class="galleryFrame">
-			<img src="../img/radzAtHan.jpg" class="galleryImage">
-			<button id="imgBtn3">C</button>
+			<img src="../img/radzAtHan.jpg" class="galleryImage" id="radzAtHanImg">
+			<button class="galleryBtn">TRAVERSE</button>
 		</div>
 		<div class="gallerySpace"></div>
 	</div>
@@ -82,9 +94,9 @@
 			<li class="featuredItem">Enchanted Rock</li>
 		</ul>
 	</div>
-	<div id="state-parks-div">
-		<h3 id="state-parks-heading">State Parks of Texas</h3>
-		<ul id="state-parks-texas">
+	<div id="state-parks-div2">
+		<h3 id="state-parks-heading2">State Parks of Texas</h3>
+		<ul id="state-parks-texas2">
 			<li>Abilene</li>
 			<li>Big Bend</li>
 			<li>Choke Canyon</li>
@@ -200,7 +212,27 @@
 			// LEFT FRAME BUTTON CLICK, LEFT AND CENTER FRAMES SWAP IMAGES
 			// CENTER FRAME BUTTON CLICK, CENTER FRAME SWAPS IMAGES RANDOMLY WITH LEFT OR RIGHT FRAMES
 			// RIGHT FRAME BUTTON CLICK, RIGHT AND CENTER FRAMES SWAP IMAGES
+		document.querySelector("#labryinthosImg").addEventListener("click", function(event) {
+			const imgSrc = this.getAttribute("src");
+			this.setAttribute("src", this.nextElementSibling.getAttribute("src"));
+			this.nextElementSibling.setAttribute("src", imgSrc);
+		});
 
+		document.querySelector("#thavnairImg").addEventListener("click", function(event) {
+			const imgSrc = this.getAttribute("src");
+			let chosenSibling = this.nextElementSibling;
+			if(Math.random() < .5) {
+				chosenSibling = this.previousElementSibling;
+			}
+			this.setAttribute("src", chosenSibling.getAttribute("src"));
+			chosenSibling.setAttribute("src", imgSrc);
+		});
+
+		document.querySelector("#radzAtHanImg").addEventListener("click", function(event) {
+			const imgSrc = this.getAttribute("src");
+			this.setAttribute("src", this.previousElementSibling.getAttribute("src"));
+			this.previousElementSibling.setAttribute("src", imgSrc);
+		});
 
 </script>
 </body>
