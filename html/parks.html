@@ -5,22 +5,24 @@
 	<title>Parks</title>
 
 	<style>
-        .invisible {
-            visibility: hidden;
-            /*display: none;*/
-        }
+		/*EXAMPLE SELECTORS*/
+        /*.invisible {*/
+        /*    visibility: hidden;*/
+        /*    !*display: none;*!*/
+        /*}*/
 
-        .green-background {
-            background-color: green;
-        }
+        /*.green-background {*/
+        /*    background-color: green;*/
+        /*}*/
 
+		/*EXERCISE SELECTORS*/
         .color {
 	        color: gold;
         }
 
-        .colorItem {
-            color: blue;
-        }
+        /*.colorItem {*/
+        /*    color: blue;*/
+        /*}*/
 
         .imageGallery {
 	        display: flex;
@@ -55,16 +57,16 @@
 	<div class="imageGallery">
 		<div class="gallerySpace"></div>
 		<div class="galleryFrame">
-			<img src="../img/labryinthos.jpg" class="galleryImage" id="labryinthosImg">
-			<button class="galleryBtn">TRAVERSE</button>
+			<img src="../img/labryinthos.jpg" class="galleryImage" id="labryinthosImg" alt="Labryinthos">
+			<button class="galleryBtn" id="galleryBtn1">TRAVERSE</button>
 		</div>
 		<div class="galleryFrame">
-			<img src="../img/thavnair.jpg" class="galleryImage" id="thavnairImg">
-			<button class="galleryBtn">TRAVERSE</button>
+			<img src="../img/thavnair.jpg" class="galleryImage" id="thavnairImg" alt="Thavnair">
+			<button class="galleryBtn" id="galleryBtn2">TRAVERSE</button>
 		</div>
 		<div class="galleryFrame">
-			<img src="../img/radzAtHan.jpg" class="galleryImage" id="radzAtHanImg">
-			<button class="galleryBtn">TRAVERSE</button>
+			<img src="../img/radzAtHan.jpg" class="galleryImage" id="radzAtHanImg" alt="Radz at Han">
+			<button class="galleryBtn" id="galleryBtn3">TRAVERSE</button>
 		</div>
 		<div class="gallerySpace"></div>
 	</div>
@@ -104,134 +106,121 @@
 			<li class="featuredItem">Enchanted Rock</li>
 		</ul>
 	</div>
-
-	<dl>
-		<dt>How many people visit the national parks?</dt>
-		<dd class="invisible">Total recreation visitors to the national parks in 2018: 318,211,833.</dd>
-
-		<dt>How old is the National Park System?</dt>
-		<dd class="invisible">The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916.</dd>
-
-		<dt>How many employees are in the National Park Service?</dt>
-		<dd class="invisible">Permanent, temporary, and seasonal employees: More than 20,000</dd>
-
-		<dt>What is the origin of the National Park Service arrowhead?</dt>
-		<dd class="invisible">The arrowhead was authorized as the official National Park Service emblem by the Secretary of the Interior on July 20, 1951.</dd>
-
-		<dt>How many areas are in the National Park System?</dt>
-		<dd class="invisible">The system includes 419 areas covering more than 85 million acres in every state, the District of Columbia, American Samoa, Guam, Puerto Rico, and the Virgin Islands.</dd>
-
-		<dt>What is the largest national park site?</dt>
-		<dd class="invisible">Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres.</dd>
-
-		<dt>What is the National Park Service budget?</dt>
-		<dd class="invisible">Fiscal Year (FY) 2014 Enacted: $2.98 billion.</dd>
-
-		<dt>Can I bring my pet to a national park?</dt>
-		<dd class="invisible">Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in some lodging facilities.</dd>
-
-		<dt>How do I apply for a job with the National Park Service?</dt>
-		<dd class="invisible">National Park Service jobs, including both permanent and seasonal positions, are listed on USAJOBs.</dd>
-
-		<dt>What do I need to know about driving off road in national parks?</dt>
-		<dd class="invisible">Before you head out, check with the national parks that you intend to visit. In many national parks, off-road driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.</dd>
-	</dl>
-
-	<!--BUTTON TO TOGGLE VISIBILITY OF dd ITEMS:-->
-	<!--	<button id="inviso-toggle">Toggle Visibility</button>-->
-
 	<!--BUTTON TO HIGHLIGHT/COLOR LAST ITEM IN LIST:-->
 	<button id="featureToggle">Featured Items</button>
+	<dl>
+		<dt>How many people visit the national parks?</dt>
+		<dd>Total recreation visitors to the national parks in 2018: 318,211,833.</dd>
+
+		<dt>How old is the National Park System?</dt>
+		<dd>The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916.</dd>
+
+		<dt>How many employees are in the National Park Service?</dt>
+		<dd>Permanent, temporary, and seasonal employees: More than 20,000</dd>
+
+		<dt>What is the origin of the National Park Service arrowhead?</dt>
+		<dd>The arrowhead was authorized as the official National Park Service emblem by the Secretary of the Interior on July 20, 1951.</dd>
+
+		<dt>How many areas are in the National Park System?</dt>
+		<dd>The system includes 419 areas covering more than 85 million acres in every state, the District of Columbia, American Samoa, Guam, Puerto Rico, and the Virgin Islands.</dd>
+
+		<dt>What is the largest national park site?</dt>
+		<dd>Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres.</dd>
+
+		<dt>What is the National Park Service budget?</dt>
+		<dd>Fiscal Year (FY) 2014 Enacted: $2.98 billion.</dd>
+
+		<dt>Can I bring my pet to a national park?</dt>
+		<dd>Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in some lodging facilities.</dd>
+
+		<dt>How do I apply for a job with the National Park Service?</dt>
+		<dd>National Park Service jobs, including both permanent and seasonal positions, are listed on USAJOBs.</dd>
+
+		<dt>What do I need to know about driving off-road in national parks?</dt>
+		<dd>Before you head out, check with the national parks that you intend to visit. In many national parks, off-road driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.</dd>
+	</dl>
+
 
 	<script>
+		document.addEventListener('DOMContentLoaded', function() {
 
-		// // EXAMPLE EXERCISE:
-		// // SET REFERENCE FOR ANCHOR:
-		// const myToggle = document.querySelector("#inviso-toggle");
-		// // ADD CLICK EVENT LISTENER TO ANCHOR:
-		// myToggle.addEventListener("click", function(event) {
-		// 	// TOGGLE CLASS INVISIBLE IN EVENT LISTENER FUNCTION
-		// 	// GRAB AND TOGGLE ALL THE dd ELEMENTS INVISIBLE:
-		// 	const myDDs = document.querySelectorAll("dd");
-		// 	myDDs.forEach(function(dd) {
-		// 		dd.classList.toggle("invisible");
-		// 	})
-		// });
+			// TODO: CREATE A BUTTON THAT MAKES THE LAST li ELEMENT IN EACH ul HAVE A YELLOW BACKGROUND
+			// SET REFERENCE FOR ANCHOR:
+			const colorToggle = document.querySelector('#featureToggle');
+			// ADD CLICK EVENT LISTENER TO ANCHOR:
+			colorToggle.addEventListener('click', function(event) {
+				// TOGGLE CLASS COLOR IN EVENT LISTENER FUNCTION
+				// GRAB AND TOGGLE THE LAST li IN EACH ul:
+				const lastItem = document.querySelectorAll('.featuredItem');
+				lastItem.forEach(function(li) {
+					li.classList.toggle('color');
+				})
+			});
 
-		// EXAMPLE EXERCISE:
-		// TARGET ALL dt ELEMENTS:
-		// const myDTs = document.querySelectorAll("dt");
-		// myDTs.forEach(function(dt) {
-		// 	// ADD CLICK EVENT LISTENER AT EACH dt ELEMENT:
-		// 	dt.addEventListener("click", function(event) {
-		// 		// TURN BACKGROUND COLOR OF dt ELEMENT GREEN WHEN CLICKED:
-		// 		this.classList.toggle("green-background");
-		// 	});
-		// })
+			// TODO: BOLD THE li WHEN THE ASSOCIATED h3 IS CLICKED USING fontWeight= "bold"
+			// TARGET ALL ul HEADERS:
+			const boldHeader = document.querySelectorAll('h3');
+				// ADD CLICK EVENT LISTENER AT EACH HEADER OF ul ELEMENT:
+			boldHeader.forEach(function(h3) {
+				h3.addEventListener('click', function(event) {
+					//TARGET li ELEMENTS USING .this AND .nextElementSibling:
+					const boldItem = this.nextElementSibling.children
+					// CHANGE CLASS FONT WEIGHT OF li ELEMENTS:
+					for (let i = 0; i < boldItem.length; i++) {
+						boldItem[i].style.fontWeight = "bolder";
+					}
+				});
+			});
 
-		// TODO: CREATE A BUTTON THAT MAKES THE LAST li ELEMENT IN EACH ul HAVE A YELLOW BACKGROUND
-		// SET REFERENCE FOR ANCHOR:
-		const colorToggle = document.querySelector('#featureToggle');
-		// ADD CLICK EVENT LISTENER TO ANCHOR:
-		colorToggle.addEventListener('click', function(event) {
-			// TOGGLE CLASS COLOR IN EVENT LISTENER FUNCTION
-			// GRAB AND TOGGLE THE LAST li IN EACH ul:
-			const lastItem = document.querySelectorAll('.featuredItem');
-			lastItem.forEach(function(li) {
-				li.classList.toggle('color');
-			})
-		});
+			// TODO: CHANGE THE COLOR OF THE FIRST li IN EVERY ul TO BLUE WHEN ANY li IS CLICKED
+			const listItems = document.querySelectorAll('li');
+			listItems.forEach(function(li) {
+				li.addEventListener('click', function (event) {
+					// USE .this TO CALL THE PARENT ELEMENT [ul] THEN THE FIRST CHILD [li]
+					this.parentElement.firstElementChild.style.color = 'blue';
+				});
+			});
 
-		// TODO: BOLD THE li WHEN THE ASSOCIATED h3 IS CLICKED USING fontWeight= "bold"
-		// TARGET ALL ul HEADERS:
-		const boldHeader = document.querySelectorAll('h3');
-			// ADD CLICK EVENT LISTENER AT EACH HEADER OF ul ELEMENT:
-		boldHeader.forEach(function(h3) {
-			h3.addEventListener('click', function(event) {
-				//TARGET li ELEMENTS USING .this AND .nextElementSibling:
-				const boldItem = this.nextElementSibling.children
-				// CHANGE CLASS FONT WEIGHT OF li ELEMENTS:
-				for (let i = 0; i < boldItem.length; i++) {
-					boldItem[i].style.fontWeight = "bolder";
+			// TODO BONUS: CREATE 3 DIVS SIMILAR TO A PICTURE FRAME EACH ONE SHOULD HAVE
+			// A UNIQUE IMAGE AND BUTTON UNDERNEATH THAT SWAPS THE IMAGE USING TRAVERSING PROPERTIES:
+				// LEFT FRAME BUTTON CLICK, LEFT AND CENTER FRAMES SWAP IMAGES
+				// CENTER FRAME BUTTON CLICK, CENTER FRAME SWAPS IMAGES RANDOMLY WITH LEFT OR RIGHT FRAMES
+				// RIGHT FRAME BUTTON CLICK, RIGHT AND CENTER FRAMES SWAP IMAGES
+
+			// ADD EVENT LISTENER TO BUTTON OF LEFT IMAGE:
+			document.querySelector("#galleryBtn1").addEventListener("click", function(event) {
+				// TARGET THE SRC OF THE LEFT IMAGE:
+				const leftImgSrc = this.parentElement.firstElementChild.getAttribute("src");
+				// SET SRC OF LEFT IMAGE AS CENTER IMAGE:
+				this.parentElement.firstElementChild.setAttribute("src", document.getElementById("thavnairImg").getAttribute("src"));
+				// SET SRC OF CENTER IMAGE AS LEFT IMAGE:
+				document.getElementById("thavnairImg").setAttribute("src", leftImgSrc);
+			});
+
+			// ADD EVENT LISTENER TO BUTTON OF CENTER IMAGE:
+			document.querySelector("#galleryBtn2").addEventListener("click", function(event) {
+				// TARGET THE SRC OF CENTER IMAGE:
+				const centerImgSrc = this.parentElement.firstElementChild.getAttribute("src");
+				// SELECT LEFT OR RIGHT IMAGE TO SWAP SRC WITH AT RANDOM:
+				let randomImg = document.getElementById("labryinthosImg");
+				if(Math.random() < .5) {
+					randomImg = document.getElementById("radzAtHanImg");
 				}
+				// SET SRC OF CENTER IMAGE AS LEFT OR RIGHT IMAGE:
+				this.parentElement.firstElementChild.setAttribute("src", randomImg.getAttribute("src"));
+				// SET SRC OF LEFT OR RIGHT IMAGE WITH CENTER IMAGE:
+				randomImg.setAttribute("src", centerImgSrc);
 			});
-		});
 
-		// TODO: CHANGE THE COLOR OF THE FIRST li IN EVERY ul TO BLUE WHEN ANY li IS CLICKED
-		const listItems = document.querySelectorAll('li');
-		listItems.forEach(function(li) {
-			li.addEventListener('click', function (event) {
-				// USE .this TO CALL THE PARENT ELEMENT [ul] THEN THE FIRST CHILD [li]
-				this.parentElement.firstElementChild.style.color = 'blue';
+			// ADD EVENT LISTENER TO BUTTON OF RIGHT IMAGE:
+			document.querySelector("#galleryBtn3").addEventListener("click", function(event) {
+				// TARGET THE SRC OF THE RIGHT IMAGE:
+				const rightImgSrc = this.parentElement.firstElementChild.getAttribute("src");
+				// SET THE SRC OF THE RIGHT IMAGE AS THE CENTER IMAGE:
+				this.parentElement.firstElementChild.setAttribute("src", document.getElementById("thavnairImg").getAttribute("src"));
+				// SET THE SRC OF THE CENTER IMAGE AS THE RIGHT IMAGE:
+				document.getElementById("thavnairImg").setAttribute("src", rightImgSrc);
 			});
-		});
-
-		// TODO BONUS: CREATE 3 DIVS SIMILAR TO A PICTURE FRAME
-		// EACH ONE SHOULD HAVE A UNIQUE IMAGE AND BUTTON UNDERNEATH
-		// THAT SWAPS THE IMAGE USING TRAVERSING PROPERTIES:
-			// LEFT FRAME BUTTON CLICK, LEFT AND CENTER FRAMES SWAP IMAGES
-			// CENTER FRAME BUTTON CLICK, CENTER FRAME SWAPS IMAGES RANDOMLY WITH LEFT OR RIGHT FRAMES
-			// RIGHT FRAME BUTTON CLICK, RIGHT AND CENTER FRAMES SWAP IMAGES
-		document.querySelector("#labryinthosImg").addEventListener("click", function(event) {
-			const imgSrc = this.getAttribute("src");
-			this.setAttribute("src", this.nextElementSibling.getAttribute("src"));
-			this.nextElementSibling.setAttribute("src", imgSrc);
-		});
-
-		document.querySelector("#thavnairImg").addEventListener("click", function(event) {
-			const imgSrc = this.getAttribute("src");
-			let chosenSibling = this.nextElementSibling;
-			if(Math.random() < .5) {
-				chosenSibling = this.previousElementSibling;
-			}
-			this.setAttribute("src", chosenSibling.getAttribute("src"));
-			chosenSibling.setAttribute("src", imgSrc);
-		});
-
-		document.querySelector("#radzAtHanImg").addEventListener("click", function(event) {
-			const imgSrc = this.getAttribute("src");
-			this.setAttribute("src", this.previousElementSibling.getAttribute("src"));
-			this.previousElementSibling.setAttribute("src", imgSrc);
 		});
 
 </script>
