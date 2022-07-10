@@ -9,22 +9,23 @@
 	        color: gold;
         }
 
-        .imageGallery {
+        .traversalGallery {
 	        display: flex;
-	        justify-content: space-around;
+	        justify-content: space-evenly;
 	        align-items: center;
         }
 
         .gallerySpace {
 	        width: 35px;
         }
+
         .galleryImage {
             border: black 5px solid;
 	        width: auto;
 	        height: 200px;
         }
 
-        .galleryFrame {
+        .galleryImg-div {
 	        display: flex;
 	        flex-direction: column;
 	        align-items: center;
@@ -36,91 +37,120 @@
 	        width: 130px;
         }
 
+        .locationInfo {
+	        display: flex;
+	        justify-content: space-between;
+        }
+
+        .locationSpace {
+            width: 35px;
+        }
+
+        h2 {
+	        text-align: center;
+        }
+
+        .featureToggle-div {
+	        display: flex;
+	        justify-content: center;
+        }
+
+        li {
+	        list-style: none;
+        }
 	</style>
 </head>
 <body>
-	<div class="imageGallery">
+	<h2>Traversal Locations</h2>
+	<div class="traversalGallery">
 		<div class="gallerySpace"></div>
-		<div class="galleryFrame">
+		<div class="galleryImg-div">
 			<img src="../img/labryinthos.jpg" class="galleryImage" id="labryinthosImg" alt="Labryinthos">
 			<button class="galleryBtn" id="galleryBtn1">TRAVERSE</button>
 		</div>
-		<div class="galleryFrame">
+		<div class="galleryImg-div">
 			<img src="../img/thavnair.jpg" class="galleryImage" id="thavnairImg" alt="Thavnair">
 			<button class="galleryBtn" id="galleryBtn2">TRAVERSE</button>
 		</div>
-		<div class="galleryFrame">
+		<div class="galleryImg-div">
 			<img src="../img/radzAtHan.jpg" class="galleryImage" id="radzAtHanImg" alt="Radz at Han">
 			<button class="galleryBtn" id="galleryBtn3">TRAVERSE</button>
 		</div>
 		<div class="gallerySpace"></div>
 	</div>
 
-	<h2>National Parks FAQ</h2>
-
 <!-- TODO: ADD 3 UNORDERED LISTS UNDER THE FAQs SECTION-->
 <!-- TODO: EACH LIST SHOULD CONTAIN A NAME IN AN h3 ELEMENT AND A ul OF 4 FACTS-->
-	<h2>Parks List</h2>
-	<div id="national-parks-div">
-		<h3 id="national-parks-heading">Labryinthos</h3>
-		<ul id="national-parks">
-			<li>Type: Cave</li>
-			<li>Region: The Northern Empty</li>
-			<li>Residents:
-				<ul>
-					<li>Sharlayans</li>
-					<li>Kokkol Dankol</li>
-				</ul>
-			</li>
-			<li>Dungeon: Lvl 89 The Aitiascope</li>
-			<li>Trial: Lvl 89 The Mothercrystal</li>
-			<li class="featuredItem">Feature: 'The Living Library'</li>
-		</ul>
+	<h2>Location Highlights</h2>
+	<div class="locationInfo">
+		<div class="locationSpace"></div>
+		<div id="labryinthos-div">
+			<h3 id="labryinthos-heading">Labryinthos</h3>
+			<ul id="labryinthos">
+				<li>Type: Cave</li>
+				<li>Region: The Northern Empty</li>
+				<li>Residents:
+					<ul>
+						<li>Sharlayans</li>
+						<li>Kokkol Dankol</li>
+					</ul>
+				</li>
+				<li>Dungeon: Lvl 89 The Aitiascope</li>
+				<li>Trial: Lvl 89 The Mothercrystal</li>
+				<li class="featuredItem">Feature: 'The Living Library'</li>
+			</ul>
+		</div>
+		<div id="thavnair-div">
+			<h3 id="thavnair-heading">Thavnair</h3>
+			<ul id="thavnair">
+				<li>Type: Island</li>
+				<li>Region: Ilsabard</li>
+				<li>Residents:
+					<ul>
+						<li>Au Ra</li>
+						<li>Hyur</li>
+						<li>Arkasodora</li>
+					</ul>
+				</li>
+				<li>Dungeons:
+					<ul>
+						<li>Lvl 81 The Tower of Zot</li>
+						<li>Lvl 85 Vanaspati</li>
+						<li>Lvl 90 Alzadaal's Legacy</li>
+					</ul>
+				</li>
+				<li class="featuredItem">Feature: Magically infused Giantsgall</li>
+			</ul>
+		</div>
+		<div id="radzAtHan-div">
+			<h3 id="radzAtHan-heading">Radz at Han</h3>
+			<ul id="radzAtHan">
+				<li>Type: City-State</li>
+				<li>Region: Thavnair</li>
+				<li>Residents:
+					<ul>
+						<li>Ahewann</li>
+						<li>Ardashir Balyk</li>
+						<li>Jalzahn Daemir</li>
+						<li>Nashmeira</li>
+						<li>Nidhana</li>
+						<li>Ranaa Mihgo</li>
+						<li>Varshahn</li>
+						<li>Vrtra</li>
+					</ul>
+				</li>
+				<li class="featuredItem">Feature: 'Birthplace of Alchemy'</li>
+			</ul>
+		</div>
+		<div class="locationSpace"></div>
 	</div>
-	<div id="state-parks-div">
-		<h3 id="state-parks-heading">Thavnair</h3>
-		<ul id="state-parks-texas">
-			<li>Type: Island</li>
-			<li>Region: Ilsabard</li>
-			<li>Residents:
-				<ul>
-					<li>Au Ra</li>
-					<li>Hyur</li>
-					<li>Arkasodora</li>
-				</ul>
-			</li>
-			<li>Dungeons:
-				<ul>
-					<li>Lvl 81 The Tower of Zot</li>
-					<li>Lvl 85 Vanaspati</li>
-					<li>Lvl 90 Alzadaal's Legacy</li>
-				</ul>
-			</li>
-			<li class="featuredItem">Feature: Magically infused Giantsgall</li>
-		</ul>
-	</div>
-	<div id="state-parks-div2">
-		<h3 id="state-parks-heading2">State Parks of Texas</h3>
-		<ul id="state-parks-texas2">
-			<li>Type: City-State</li>
-			<li>Region: Thavnair</li>
-			<li>Residents:
-				<ul>
-					<li>Ahewann</li>
-					<li>Ardashir Balyk</li>
-					<li>Jalzahn Daemir</li>
-					<li>Nashmeira</li>
-					<li>Nidhana</li>
-					<li>Ranaa Mihgo</li>
-					<li>Varshahn</li>
-					<li>Vrtra</li>
-				</ul>
-			</li>
-			<li class="featuredItem">Feature: 'Birthplace of Alchemy'</li>
-		</ul>
-	</div>
+
 	<!--BUTTON TO HIGHLIGHT/COLOR LAST ITEM IN LIST:-->
-	<button id="featureToggle">Featured Items</button>
+	<div class="featureToggle-div">
+	<button id="featureToggle">Featured Info</button>
+	</div>
+
+	<h2>Traversal FAQ</h2>
 	<dl>
 		<dt>How many people visit the national parks?</dt>
 		<dd>Total recreation visitors to the national parks in 2018: 318,211,833.</dd>
