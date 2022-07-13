@@ -7,16 +7,19 @@
 <body>
 <!--DIV CONTAINING BLOG POSTS-->
 	<div id="posts">
-		<h4></h4>
-		<p></p>
-		<h5></h5>
-		<h6></h6>
+		<div class="blog-card">
+			<h4></h4>
+			<p></p>
+			<h5></h5>
+			<h6></h6>
+		</div>
 	</div>
 
 <!--SCRIPT CONTAINING JS FUNCTIONS-->
 	<script>
 		let post = '';
 		const blog = document.querySelector('#posts');
+		// FETCH DATA FOR POSTS DIV
 		fetch('../data/blog.json')
 			.then(function (response) {
 				if(response.status !== 200) {
@@ -25,13 +28,13 @@
 				}
 			}).then(function (data) {
 			console.log(data)
+			// STORE DATA IN POSTS DIV
 			for (let i = 0; i < data.length; i++) {
 				blog.innerHTML +=
 					'<h4>'+ data[i].title +'</h4>'+
 					'<p>'+ data[i].content +'</p>'+
 					'<h5>'+ data[i].categories.join(' - ') +'</h5>'+
 					'<h6>'+ data[i].date +'</h6>'
-
 				console.log(data[i].title);
 				console.log(data[i].content);
 				console.log(data[i].categories.join(' - '));
