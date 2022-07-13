@@ -6,7 +6,7 @@ body {
 body {
   margin: 0;
   background: linear-gradient(45deg, #49a09d, #5f2c82);
-  font-family: sans-serif;
+  font-family: 'Gugi', cursive;
   font-weight: 100;
 }
 
@@ -15,6 +15,33 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.glow {
+  font-size: 60px;
+  color: #fff;
+  text-align: left;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #02c74d, 0 0 40px #02c74d, 0 0 50px #02c74d, 0 0 60px #02c74d, 0 0 70px #02c74d;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #53fc94, 0 0 40px #53fc94, 0 0 50px #53fc94, 0 0 60px #53fc94, 0 0 70px #53fc94, 0 0 80px #53fc94;
+  }
+}
+
+@-webkit-keyframes glow2 {
+  from {
+    text-shadow: 0 0 10px #02c74d, 0 0 20px #02c74d, 0 0 30px #02c74d, 0 0 40px #02c74d, 0 0 50px #02c74d, 0 0 60px #02c74d, 0 0 70px #02c74d;
+  }
+
+  to {
+    text-shadow: 0 0 20px #2BFA75FF, 0 0 30px #2BFA75FF, 0 0 40px #2BFA75FF, 0 0 50px #2BFA75FF, 0 0 60px #2BFA75FF, 0 0 70px #2BFA75FF, 0 0 80px #2BFA75FF;
+  }
 }
 
 table {
@@ -45,11 +72,14 @@ tbody {
   tr {
     &:hover {
       background-color: rgba(255,255,255,0.3);
+
     }
   }
   td {
     position: relative;
     &:hover {
+      //color: #2df62d;
+      animation: glow2 1s ease-in-out infinite alternate;
       &:before {
         content: "";
         position: absolute;
@@ -57,7 +87,7 @@ tbody {
         right: 0;
         top: -9999px;
         bottom: -9999px;
-        background-color: rgba(255,255,255,0.2);
+        background-color: rgba(255,255,255,0.3);
         z-index: -1;
       }
     }
