@@ -32,6 +32,7 @@
 	<script src='../js/keys.js'></script>
 	<script>
 	(async function() {
+		// DISPLAY MAPBOX API VIA TOKEN KEY
 		mapboxgl.accessToken = mapboxAPIkey;
 		let map = new mapboxgl.Map({
 			container: 'map',
@@ -39,7 +40,7 @@
 			zoom: 10,
 			center: [-98.4916, 29.4252]
 		});
-
+		// FETCHING LOCATION WITH GEOCODE FUNCTION
 		function latLangAddy(addy, token = mapboxAPIkey) {
 			const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/';
 			return fetch(`${url}${encodeURIComponent(addy)}.json?access_token=${token}`)
@@ -48,14 +49,6 @@
 					return data.features[0].center;
 				});
 		}
-
-		// let pin = await latLangAddy('4051 Broadway St. San Antonio, TX 78209');
-		// console.log(pin);
-
-			// const pinLocation = new mapboxgl.Marker();
-			// pinLocation.setLngLat(pin);
-			// pinLocation.addTo(map);
-
 		// INCREASE ZOOM LEVEL WHEN BUTTON IS CLICKED
 		const zoomIn = document.querySelector('#zoom-in');
 		zoomIn.addEventListener('click', function(e) {
@@ -63,15 +56,16 @@
 			currentZoom++;
 			map.setZoom(currentZoom);
 		});
-
-		document.querySelector("#pin-marker").addEventListener("click", function (event) {
-			dropPin('4051 Broadway St. San Antonio, TX 78209');
-
+		// ADD EVENT LISTENER TO DROP PIN BUTTON
+		document.querySelector("#pin-marker").addEventListener("click", function (E) {
+			// RUN DROP PIN FUNCTION WITH NEW ADDRESS AND INFO
+			dropPin('4051 Broadway St. San Antonio, TX 78209','Koi Kawa');
+			dropPin('123 Losoya St. San Antonio, TX 78205','Makenka Hot Truck');
+			dropPin('1705 Blanco Rd, San Antonio, TX 78212','Bright Coffee');
 		});
 
-		async function dropPin(addy) {
-
-			// ADD PIN TO MAP
+		async function dropPin(addy,pinInfo) {
+			// SET NEW PIN LOCATION WITH GEOCODE FUNCTION
 			let pinLocation = await latLangAddy(addy)
 			let pin = new mapboxgl.Marker();
 			let popup = new mapboxgl.Popup();
@@ -80,10 +74,8 @@
 			pin.addTo(map);
 			// ADD POPUP TO PIN
 			popup.setLngLat(pinLocation);
-			popup.setHTML('<p>Pin Dropped</p>')
+			popup.setHTML('<p>'+ pinInfo +'</p>');
 		}
-
-
 	})();
 
 </script>
