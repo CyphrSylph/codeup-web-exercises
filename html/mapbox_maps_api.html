@@ -2,9 +2,89 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Mapbox</title>
+	<title>Mapbox Map</title>
+	<!-- MAPBOX CSS -->
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+	<!-- CUSTOM CSS -->
+	<style>
+        #map {
+            /* SET WIDTH OR HEIGHT TO ANY SIZE */
+            width: 100%;
+            height: 500px;
+        }
+	</style>
 </head>
 <body>
+	<!-- MAPBOX HEADER-->
+	<h1>Mapbox Map</h1>
+	<!-- MAPBOX CONTAINER -->
+	<div id='map'></div>
+	<!-- ZOOM BUTTON -->
+	<button id="zoom-in">Zoom</button>
+	<!-- PIN BUTTON -->
+	<button id="pin-marker">Pin Location</button>
 
+	<!-- MAPBOX JS -->
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+	<!-- CUSTOM JS -->
+	<!-- LINK TO MAPBOX KEY-->
+	<script src='../js/keys.js'></script>
+	<script>
+	(async function() {
+		mapboxgl.accessToken = mapboxAPIkey;
+		let map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/mapbox/streets-v9',
+			zoom: 10,
+			center: [-98.4916, 29.4252]
+		});
+
+		function latLangAddy(addy, token = mapboxAPIkey) {
+			const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/';
+			return fetch(`${url}${encodeURIComponent(address)}.json?access_token=${token}`)
+				.then(async function(res) {
+					const data = await res.json();
+					return data.features[0].center;
+				});
+		}
+
+		let pin = await latLangAddy('San Antonio, TX');
+		console.log(pin);
+
+		const satx = new mapboxgl.Marker();
+		satx.setLatLang(pin);
+		satx.addTo(map);
+
+		// INCREASE ZOOM LEVEL WHEN BUTTON IS CLICKED
+		const zoomIn = document.querySelector('#zoom-in');
+		zoomIn.addEventListener('click', function(e) {
+			let currentZoom = map.getZoom();
+			currentZoom++;
+			map.setZoom(currentZoom);
+		});
+
+		document.querySelector("#pin-marker").addEventListener("click", function (event) {
+			// ADD POPUP TO PIN
+			let popup = new mapboxgl.Popup();
+			popup.setLatLang([100,100])
+			popup.setHTML('<p>Pin Dropped</p>')
+
+			let pin = new mapboxgl.pin();
+
+			pin.setPopup(popup);
+			pin.setLatLang([100,100]);
+			pin.addTo(map);
+		});
+
+	})();
+
+</script>
 </body>
 </html>
+
+
+
+
+
+
