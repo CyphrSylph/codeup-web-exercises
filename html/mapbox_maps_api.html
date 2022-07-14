@@ -42,19 +42,19 @@
 
 		function latLangAddy(addy, token = mapboxAPIkey) {
 			const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/';
-			return fetch(`${url}${encodeURIComponent(address)}.json?access_token=${token}`)
+			return fetch(`${url}${encodeURIComponent(addy)}.json?access_token=${token}`)
 				.then(async function(res) {
 					const data = await res.json();
 					return data.features[0].center;
 				});
 		}
 
-		let pin = await latLangAddy('San Antonio, TX');
-		console.log(pin);
+		// let pin = await latLangAddy('4051 Broadway St. San Antonio, TX 78209');
+		// console.log(pin);
 
-		const satx = new mapboxgl.Marker();
-		satx.setLatLang(pin);
-		satx.addTo(map);
+			// const pinLocation = new mapboxgl.Marker();
+			// pinLocation.setLngLat(pin);
+			// pinLocation.addTo(map);
 
 		// INCREASE ZOOM LEVEL WHEN BUTTON IS CLICKED
 		const zoomIn = document.querySelector('#zoom-in');
@@ -65,17 +65,24 @@
 		});
 
 		document.querySelector("#pin-marker").addEventListener("click", function (event) {
-			// ADD POPUP TO PIN
-			let popup = new mapboxgl.Popup();
-			popup.setLatLang([100,100])
-			popup.setHTML('<p>Pin Dropped</p>')
+			dropPin('4051 Broadway St. San Antonio, TX 78209');
 
-			let pin = new mapboxgl.pin();
-
-			pin.setPopup(popup);
-			pin.setLatLang([100,100]);
-			pin.addTo(map);
 		});
+
+		async function dropPin(addy) {
+
+			// ADD PIN TO MAP
+			let pinLocation = await latLangAddy(addy)
+			let pin = new mapboxgl.Marker();
+			let popup = new mapboxgl.Popup();
+			pin.setLngLat(pinLocation);
+			pin.setPopup(popup);
+			pin.addTo(map);
+			// ADD POPUP TO PIN
+			popup.setLngLat(pinLocation);
+			popup.setHTML('<p>Pin Dropped</p>')
+		}
+
 
 	})();
 
