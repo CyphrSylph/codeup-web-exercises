@@ -4,25 +4,42 @@
 	<meta charset="UTF-8">
 	<title>Mapbox Map</title>
 	<!-- MAPBOX CSS -->
-	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
 	<!-- CUSTOM CSS -->
 	<style>
+		* {
+            background-image: linear-gradient(90deg, lightskyblue, rebeccapurple);
+        }
+
         #map {
             /* SET WIDTH OR HEIGHT TO ANY SIZE */
-            width: 100%;
+            width: 50%;
             height: 500px;
+	        border: 2px solid gray;
+	        margin-bottom: 5px;
         }
+
+        /*.marker {*/
+        /*    background-image: url('../img/icons8-location-64.png');*/
+        /*    background-size: cover;*/
+        /*    width: 50px;*/
+        /*    height: 50px;*/
+        /*    border-radius: 50%;*/
+        /*    cursor: pointer;*/
+        /*}*/
+
 	</style>
 </head>
 <body>
 	<!-- MAPBOX HEADER-->
-	<h1>Mapbox Map</h1>
+	<h1>Byte Map</h1>
 	<!-- MAPBOX CONTAINER -->
 	<div id='map'></div>
-	<!-- ZOOM BUTTON -->
-	<button id="zoom-in">Zoom</button>
+	<!-- ZOOM BUTTONS -->
+	<button id="zoom-in">+</button>
+	<button id="zoom-out">-</button>
 	<!-- PIN BUTTON -->
-	<button id="pin-marker">Pin Location</button>
+	<button id="drop-pin">Find Byte</button>
 
 	<!-- MAPBOX JS -->
 	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
@@ -36,11 +53,12 @@
 		mapboxgl.accessToken = mapboxAPIkey;
 		let map = new mapboxgl.Map({
 			container: 'map',
-			style: 'mapbox://styles/mapbox/streets-v9',
-			zoom: 10,
+			style: 'mapbox://styles/mapbox/light-v10\n',
+			zoom: 11,
 			center: [-98.4916, 29.4252]
 		});
-		// FETCHING LOCATION WITH GEOCODE FUNCTION
+
+		// FETCHING LOCATION WITH GEOCODE
 		function latLangAddy(addy, token = mapboxAPIkey) {
 			const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/';
 			return fetch(`${url}${encodeURIComponent(addy)}.json?access_token=${token}`)
@@ -49,6 +67,7 @@
 					return data.features[0].center;
 				});
 		}
+
 		// INCREASE ZOOM LEVEL WHEN BUTTON IS CLICKED
 		const zoomIn = document.querySelector('#zoom-in');
 		zoomIn.addEventListener('click', function(e) {
@@ -56,26 +75,93 @@
 			currentZoom++;
 			map.setZoom(currentZoom);
 		});
-		// ADD EVENT LISTENER TO DROP PIN BUTTON
-		document.querySelector("#pin-marker").addEventListener("click", function (E) {
-			// RUN DROP PIN FUNCTION WITH NEW ADDRESS AND INFO
-			dropPin('4051 Broadway St. San Antonio, TX 78209','Koi Kawa');
-			dropPin('123 Losoya St. San Antonio, TX 78205','Makenka Hot Truck');
-			dropPin('1705 Blanco Rd, San Antonio, TX 78212','Bright Coffee');
+
+		// DECREASE ZOOM LEVEL WHEN BUTTON IS CLICKED
+		const zoomOut = document.querySelector('#zoom-out');
+		zoomOut.addEventListener('click', function(e) {
+			let currentZoom = map.getZoom();
+			currentZoom--;
+			map.setZoom(currentZoom);
 		});
 
-		async function dropPin(addy,pinInfo) {
+		// ADD EVENT LISTENER TO DROP PIN BUTTON
+		document.querySelector("#drop-pin").addEventListener("click", function (e) {
+		});
+
+		async function dropPin(addy) {
 			// SET NEW PIN LOCATION WITH GEOCODE FUNCTION
-			let pinLocation = await latLangAddy(addy)
-			let pin = new mapboxgl.Marker();
+			let pinLocation = addy.latLng
+			// SET CUSTOM ICON FOR MAP PIN
+			// FROM https://icons8.com/icons/set/map-marker
+			const el = document.createElement('div');
+			el.className = 'marker';
+			el.style.backgroundRepeat = "no-repeat";
+			el.style.backgroundImage = 'url("../img/icons8-location-64.png")';
+			el.style.width = '50px';
+			el.style.height = '50px';
+			el.style.backgroundSize = '100%';
+			// CREATE NEW PIN & POPUP
+			let pin = new mapboxgl.Marker(el);
 			let popup = new mapboxgl.Popup();
 			pin.setLngLat(pinLocation);
 			pin.setPopup(popup);
-			pin.addTo(map);
-			// ADD POPUP TO PIN
-			popup.setLngLat(pinLocation);
-			popup.setHTML('<p>'+ pinInfo +'</p>');
+			// SET HTML FOR PIN POPUP
+			popup.setHTML(addy.pinText);
+			return pin;
 		}
+
+		// FETCH ADDRESS INFO
+		function getAddyInfo(addy, token = mapboxAPIkey) {
+			const url ='https://api.mapbox.com/geocoding/v5/mapbox.places/';
+			return fetch(`${url}${encodeURIComponent(addy)}.json?access_token=${token}`)
+				.then(async function(res) {
+					const data = await res.json();
+					console.log(data);
+					const addyInfo = {
+						'address': addy,
+						'latLng': data.features[0].center,
+						'placeName': data.features[0].place_name
+					};
+					return addyInfo;
+				});
+		}
+
+		// GRAB ADDY INFO USING GEOLOCATION AND PUSH INTO ARRAY
+		let bites = [];
+		let info = await getAddyInfo('4051 Broadway St. San Antonio, TX 78209');
+		info.pinText = '<a href="https://koikawasushi.com/"><b>Koi Kawa</b></a><br>Japanese Restaurant';
+		bites.push(info);
+		info = await getAddyInfo('123 Losoya St. San Antonio, TX 78205');
+		info.pinText = '<a href="https://www.makenka.com/"><b>Makenka Hot Truck</b></a><br>Latin American Eats';
+		bites.push(info);
+		info = await getAddyInfo('1705 Blanco Rd, San Antonio, TX 78212');
+		info.pinText = '<a href="https://brightcoffeesa.square.site/"><b>Bright Coffee</b></a><br>Specialty Brews';
+		bites.push(info);
+		info = await getAddyInfo('1014 S Alamo St, San Antonio, TX 78210');
+		info.pinText = '<a href="http://www.hotjoysa.com/"><b>Hot Joy</b></a><br>Asian Dishes & Cocktails';
+		bites.push(info);
+		info = await getAddyInfo('7022 S New Braunfels Ave Suite 101, San Antonio, TX 78223');
+		info.pinText = '<a href="https://bahamabucks.com/"><b>Bahama Bucks</b></a><br>Shaved Ice Company';
+		bites.push(info);
+		info = await getAddyInfo('914 E Elmira St, San Antonio, TX 78212');
+		info.pinText = '<a href="http://places.singleplatform.com/squeezers/menu?ref=google"><b>Squeezers</b></a><br>Juice Bar';
+		bites.push(info);
+		// info = await getAddyInfo('97-113 Curtain Rd, London EC2A 3BS, United Kingdom');
+		// info.pinText = 'Ballie Ballerson';
+		// bites.push(info);
+		// info = await getAddyInfo('75 30th St, Mandalay, Myanmar (Burma)');
+		// info.pinText = 'Where Ami I?';
+		// bites.push(info);
+
+
+		document.querySelector('#drop-pin').addEventListener('click', function(e) {
+			bites.forEach(async function(bite) {
+				const pin = await dropPin(bite);
+				console.log(pin);
+				pin.addTo(map);
+			})
+		});
+
 	})();
 
 </script>
