@@ -1,5 +1,9 @@
-// put front-end constants in here that will be committed to the repo
-// DON'T PUT SENSITIVE constants in here. put those in private_constants
-const FRONTEND_VERSION = 0.0001;
+/*
+PUT FRONT-END CONSTANTS IN HERE THAT WILL BE COMMITTED TO THE REPO
+DON'T PUT SENSITIVE CONSTANTS IN HERE [ADD THOSE TO private_constants]
+*/
+
+/* 10. INCREMENT THE APP VERSION NUMBER TO 0.0003 */
+const FRONTEND_VERSION = 0.0003;
 const APP_TITLE = "Jalopy Starter";
 const SKIP_STALE_TOKEN_CHECK = true;
