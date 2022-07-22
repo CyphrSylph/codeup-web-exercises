@@ -1,10 +1,11 @@
+/* HOME VIEW CSS */
+
 /* GOOGLE FONT IMPORT */
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
 
-/* JUMP ANIMATION */
+/* JUMPING TITLE ANIMATION */
 h1 {
 	cursor: default;
-	/*position: absolute;*/
 	top: 0;
 	left: 0;
 	right: 0;
@@ -52,7 +53,6 @@ h1 span:nth-child(7) {
 	-webkit-animation-delay: 0.6s;
 }
 
-/* ANIMATION */
 @-webkit-keyframes bounce {
 	100% {
 		top: -20px;
@@ -60,4 +60,43 @@ h1 span:nth-child(7) {
 		0 5px 0 #9ea483, 0 6px 0 #9ea483, 0 7px 0 #9ea483, 0 8px 0 #9ea483, 0 9px 0 #9ea483,
 		0 50px 25px rgba(0, 0, 0, 0.2);
 	}
+}
+
+/* HEADER IMAGE */
+#jalopy1 {
+	max-width: 300px;
+	display: block;
+	margin: 0 auto;
+}
+
+/* SWITCH BUTTON */
+#img-button {
+	display: block;
+	margin: 0 auto;
+	border: none;
+	border-radius: 5px;
+	background-color: #bbc29b;
+	color: white;
+}
+
+/* PARAGRAPH TEXT */
+.homeText {
+	text-align: center;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	font-family: 'PT Sans Narrow', sans-serif
+}
+
+/* FOOTER PLACEMENT */
+footer {
+	text-align: center;
+	font-size: 9px;
+	margin-top: 1em;
+	font-family: 'Comfortaa', cursive;
+}
+
+/* VERSION ICON */
+#jalopyIcon {
+	width: 3px;
+	height: 3px;
 }
