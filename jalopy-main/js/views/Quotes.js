@@ -74,14 +74,3 @@ function addQuotes() {
 	return html;
 }
 
-// DISPLAY QUOTES?
-export function quotesEvents() {
-	// const btn = document.querySelector("#add-quote-btn");
-	// btn.addEventListener("click", function(event) {
-	// 	// const quoteIndex = document.querySelectorAll(".quote");
-	// 	for (let i = 0; i < quoteIndex.length; i++) {
-	// 		// quoteIndex[i] ++;
-	// 	}
-	// });
-}
-
