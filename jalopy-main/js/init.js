@@ -12,6 +12,7 @@ function loadViewOnPageRequest() {
         //TODO: Switched to location.pathname so the route would be accurate to current view
         createView(location.pathname);
         document.querySelector("footer").innerText = "Made with Jalopy. Version " + FRONTEND_VERSION;
+        // document.querySelector("footer").innerHTML = `<img src="assets/jalopy1sil.png" id="jalopyIcon" alt="jalopy icon"> + "Made with Jalopy. Version " + FRONTEND_VERSION`;
     });
 }
 
