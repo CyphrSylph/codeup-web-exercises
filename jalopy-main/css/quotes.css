@@ -1,0 +1,49 @@
+/* QUOTES CSS */
+
+/* QUOTES HEADER DIV */
+#quotesHeader {
+	margin-top: 3em;
+	margin-bottom: 1.5em;
+	text-align: center;
+	font-family: 'Comfortaa', cursive;
+}
+
+.quotesTitle {
+	font-weight: bold;
+}
+
+.quotesAbout {
+	font-weight: lighter;
+}
+
+/* QUOTES DIV */
+#my-quotes {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.quoteCard {
+	width: 30em;
+	height: auto;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+	transition: 0.3s;
+	border-radius: 7px;
+	margin: 2em;
+}
+
+.quoteImg {
+	width: 100%;
+	border-radius: 7px 7px 0 0;
+}
+
+.quoteText {
+	padding: 1.5em 1.5em 2em;
+	font-family: 'Comfortaa', cursive;
+}
+
+.quoteAuthor {
+	padding: 1em 1.5em 2em;
+	font-family: 'PT Sans Narrow', sans-serif;
+}
