@@ -14,6 +14,9 @@ export default function Navbar(props) {
     // QUOTES VISIBLE TO EVERYONE
     html += `<a class="jalopy-nav" href="/quotes" data-link>Quotes</a>`;
 
+    // QUOTES API VISIBLE TO EVERYONE
+    html += `<a class="jalopy-nav" href="/quotesAPI" data-link>QuotesAPI</a>`;
+
     // ONLY VISIBLE TO LOGGED IN USERS
     if(loggedIn) {
         html = html + `<a class="jalopy-nav" href="/users" data-link>User Info</a>
