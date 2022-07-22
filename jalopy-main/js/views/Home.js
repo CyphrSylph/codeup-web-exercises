@@ -21,7 +21,7 @@ export default function homeHTMLFunction(props) {
                 <!-- 4. ADD THE IMAGE jalopy1.jpeg ABOVE THE p -->
                 <img src="assets/jalopy1.jpeg" id="jalopy1" alt="Jalopy">
                 <!-- 7. CHANGE THE p TEXT TO "Welcome to my Jalopy application!" -->
-                <p>
+                <p class="homeText">
                     Welcome to my Jalopy application!
                 </p>  
                 <!-- 8. ADD A BUTTON UNDER THE p WITH AN ID OF img-button -->
