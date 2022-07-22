@@ -3,15 +3,18 @@ import {isLoggedIn} from "../../auth.js";
 export default function Navbar(props) {
     const loggedIn = isLoggedIn();
 
-    // everyone can see home
+    // HOME VISIBLE TO EVERYONE
     let html = `
         <nav>
             <a class="jalopy-nav" href="/" data-link>Home</a>`;
 
-    // everyone can see about
-    html = html + `<a class="jalopy-nav" href="/about" data-link>About</a>`;
+    // ABOUT VISIBLE TO EVERYONE
+    html += `<a class="jalopy-nav" href="/about" data-link>About</a>`;
 
-    // only logged in can see user info and logout
+    // QUOTES VISIBLE TO EVERYONE
+    html += `<a class="jalopy-nav" href="/quotes" data-link>Quotes</a>`;
+
+    // ONLY VISIBLE TO LOGGED IN USERS
     if(loggedIn) {
         html = html + `<a class="jalopy-nav" href="/users" data-link>User Info</a>
             <a href="/logout" data-link>Logout</a>`;
