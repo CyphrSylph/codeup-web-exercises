@@ -7,24 +7,92 @@
 	margin: 0 auto;
 }
 
-button {
+#img-button {
 	display: block;
 	margin: 0 auto;
+	border: none;
+	border-radius: 5px;
+	background-color: #bbc29b;
+	color: white;
 }
 
 h1 {
 	margin-top: 1em;
 	margin-bottom: 2em;
+	font
 }
 
-p {
+.homeText {
 	text-align: center;
 	margin-top: 2em;
 	margin-bottom: 2em;
+	font-family: 'PT Sans Narrow', sans-serif
  }
 
 footer {
 	text-align: center;
 	font-size: 9px;
 	margin-top: 1em;
+	font-family: 'Comfortaa', cursive;
+}
+
+body {
+	/*background-image: url(../assets/ep_naturalblack.webp);*/
+}
+
+#quotesHeader {
+	margin-top: 3em;
+	margin-bottom: 1.5em;
+	text-align: center;
+	font-family: 'Comfortaa', cursive;
+}
+
+.quotesTitle {
+	font-weight: bold;
+}
+
+.quotesAbout {
+	font-weight: lighter;
+}
+
+#my-quotes {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.quoteCard {
+	width: 30em;
+	height: auto;
+	/* Add shadows to create the "card" effect */
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+	transition: 0.3s;
+	/* 5px rounded corners */
+	border-radius: 7px;
+	margin: 2em;
+}
+
+.quoteImg {
+	width: 100%;
+	border-radius: 7px 7px 0 0;
+}
+
+.quoteText {
+	padding: 1.5em 1.5em 2em;
+	font-family: 'Comfortaa', cursive;
+}
+
+.quoteAuthor {
+	padding: 1em 1.5em 2em;
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+
+a {
+	color: chocolate;
+}
+
+#jalopyIcon {
+	width: 3px;
+	height: 3px;
 }
