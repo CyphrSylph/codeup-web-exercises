@@ -14,7 +14,16 @@ export default function homeHTMLFunction(props) {
     return `
         <header>
             <!-- 2. REPLACE THE h1 TEXT WITH "Hello Jalopy!" AND CENTER IT -->
-            <h1 style="text-align: center">Hello Jalopy!</h1>
+<!--            <h1 style="text-align: center">Hello Jalopy!</h1>-->
+            <h1>
+              <span>.</span>
+              <span>j</span>
+              <span>a</span>
+              <span>l</span>
+              <span>o</span>
+              <span>p</span>
+              <span>y</span>
+            </h1>
         </header>
         <main>
             <div>
