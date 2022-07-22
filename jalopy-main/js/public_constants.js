@@ -7,3 +7,4 @@ DON'T PUT SENSITIVE CONSTANTS IN HERE [ADD THOSE TO private_constants]
 const FRONTEND_VERSION = 0.0005;
 const APP_TITLE = "Jalopy Starter";
 const SKIP_STALE_TOKEN_CHECK = true;
+const QUOTES_API_KEY = 'venus-129';
