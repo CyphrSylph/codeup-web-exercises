@@ -1,4 +1,4 @@
-
+/*CARD CONTAINER*/
 #my-quotesAPI {
 	/*height: 100vh;*/
 	/*width: 100vw;*/
@@ -8,6 +8,7 @@
 	justify-content: center;
 }
 
+/*CARD STYLING*/
 .quoteAPICard {
 	width: 30em;
 	height: auto;
@@ -17,3 +18,34 @@
 	box-shadow: rgba(0, 0, 0, 0.4) -5px 5px, rgba(0, 0, 0, 0.3) -10px 10px, rgba(0, 46, 170, 0.2) -15px 15px, rgba(0, 0, 0, 0.1) -20px 20px;
 }
 
+/*TEXT INPUT STYLING*/
+input {
+	border: none;
+	padding: 4px 4px;
+	margin-right: 6px;
+	border-radius: 3px;
+}
+input:focus, input:active {
+	outline: none;
+	border: 2px solid #bbc29b;
+	background-color: transparent;
+}
+#addBtn {
+	/*height: 2em;*/
+	/*width: 2em;*/
+	background-color: #bbc29b;
+	font-size: 13px;
+	text-decoration: none;
+	color: #fff;
+	border-radius: 3px;
+}
+/*.error::-webkit-input-placeholder  {*/
+/*	content: 'Oops! Looks like it was empty...';*/
+/*	color: chocolate;*/
+/*	!*transition: background .5s ease-out*!*/
+/*}*/
+.inputError {
+	border: 3px solid chocolate;
+	transition: border .25s ease-out;
+	-webkit-input-placeholder;
+}
