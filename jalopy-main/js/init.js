@@ -29,8 +29,9 @@ function addListenerToNavLinks() {
         if(event.target.matches('label')) {
             return;
         }
-        event.preventDefault();
+        // event.preventDefault();
         if (event.target.dataset['link'] !== undefined) {
+            event.preventDefault();
             const URI = event.target.href.substring(location.origin.length);
             createView(URI);
         }
