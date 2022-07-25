@@ -3,23 +3,94 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Blog</title>
+<!--GOOGLE FONT STYLING-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+	<!--CSS BLOG STYLING-->
+	<style>
+		body{
+			background: #efeff3;
+			font-family: 'Poppins', sans-serif;
+			-webkit-font-smoothing: antialiased;
+			color:#212121;
+		}
+		.wrapper{
+			position: relative;
+			clear:both;
+			margin: 0 auto 75px auto;
+			width: 100%;
+			overflow: hidden;
+		}
+		.top{
+			background: #FF4444;
+			height: 180px;
+			border-top: 20px solid #CC0000;
+		}
+		.top .title {
+			width: 700px;
+			margin: 38px auto 0 auto;
+		}
+		.title h1 {
+			font-size:35px;
+			color:#FFF;
+			font-weight: 700;
+			font-family: 'Comfortaa', cursive;
+		}
+		.content {
+			padding-bottom: 20px;
+		}
+		.content .card.first {
+			margin-top: -80px;
+		}
+		.card{
+			position: relative;
+			background: #fff;
+			padding:50px;
+			width: 600px;
+			margin: 20px auto 0 auto;
+			box-shadow: 0 2px 4px rgba(100,100,100,.1);
+		}
+		.card h2 {
+			font-size:21px;
+			font-weight:500;
+		}
+		.card h2 a {
+			color:#CC0000;
+			text-decoration:none;
+		}
+		.card .date {
+			color:#9e9e9e;
+			margin-top:10px;
+			font-size:14px;
+		}
+		.card .text {
+			color:#212121;
+			margin-top:20px;
+			font-size:15px;
+			line-height:22px;
+		}
+		.categories {
+
+		}
+	</style>
 </head>
+
 <body>
-<!--DIV CONTAINING BLOG POSTS-->
-	<div id="posts">
-		<div class="blog-card">
-			<h4></h4>
-			<p></p>
-			<h5></h5>
-			<h6></h6>
+<!--DIV CONTAINING BLOG POSTS-->>
+	<div class="wrapper">
+		<div class="top"><div class="title"><h1>.blog</h1></div></div>
+		<div class="content">
+			<div class="card first"></div>
+<!--			<div class="card"></div>-->
 		</div>
 	</div>
 
 <!--SCRIPT CONTAINING JS FUNCTIONS-->
 	<script>
 		let post = '';
-		const blog = document.querySelector('#posts');
-		// FETCH DATA FOR POSTS DIV
+		const blog = document.querySelector('.card');
+		// FETCH BLOG DATA FOR CONTENT DIV
 		fetch('../data/blog.json')
 			.then(function (response) {
 				if(response.status !== 200) {
@@ -28,13 +99,13 @@
 				}
 			}).then(function (data) {
 			console.log(data)
-			// STORE DATA IN POSTS DIV
+			// STORE BLOG DATA INTO CARDS OF CONTENT DIV
 			for (let i = 0; i < data.length; i++) {
 				blog.innerHTML +=
-					'<h4>'+ data[i].title +'</h4>'+
-					'<p>'+ data[i].content +'</p>'+
-					'<h5>'+ data[i].categories.join(' - ') +'</h5>'+
-					'<h6>'+ data[i].date +'</h6>'
+					'<h2>'+'<a href="#">'+ data[i].title +'</a>'+'</h2>'+
+					'<div class="categories">'+ data[i].categories.join(' - ') +'</div>'+
+					'<p class="date">'+ data[i].date +'</p>'+
+					'<p class="text">'+ data[i].content +'</p>'
 				console.log(data[i].title);
 				console.log(data[i].content);
 				console.log(data[i].categories.join(' - '));
